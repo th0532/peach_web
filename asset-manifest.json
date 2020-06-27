@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/peach_web/static/css/main.bdb4f604.chunk.css",
+    "main.js": "/peach_web/static/js/main.f992de75.chunk.js",
+    "main.js.map": "/peach_web/static/js/main.f992de75.chunk.js.map",
+    "runtime-main.js": "/peach_web/static/js/runtime-main.f20de25d.js",
+    "runtime-main.js.map": "/peach_web/static/js/runtime-main.f20de25d.js.map",
+    "static/js/2.2fba2d3f.chunk.js": "/peach_web/static/js/2.2fba2d3f.chunk.js",
+    "static/js/2.2fba2d3f.chunk.js.map": "/peach_web/static/js/2.2fba2d3f.chunk.js.map",
+    "index.html": "/peach_web/index.html",
+    "precache-manifest.92b663b4a66a956a07271d612f526bd1.js": "/peach_web/precache-manifest.92b663b4a66a956a07271d612f526bd1.js",
+    "service-worker.js": "/peach_web/service-worker.js",
+    "static/css/main.bdb4f604.chunk.css.map": "/peach_web/static/css/main.bdb4f604.chunk.css.map",
+    "static/js/2.2fba2d3f.chunk.js.LICENSE.txt": "/peach_web/static/js/2.2fba2d3f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f20de25d.js",
+    "static/js/2.2fba2d3f.chunk.js",
+    "static/css/main.bdb4f604.chunk.css",
+    "static/js/main.f992de75.chunk.js"
+  ]
+}
