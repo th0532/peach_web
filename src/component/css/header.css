@@ -1,0 +1,30 @@
+.header{
+    width: 100%;
+    height:50px;
+    position: fixed;
+    background-color: rgb(242, 170, 170);
+    top:0;
+}
+.top{
+    width:80%;
+    margin:0 auto;
+}
+.top h1{
+    font-size:30px;
+    font-weight: 600;
+    color:white;
+    display: inline-block;
+    padding: 8px 0px 0px 0px;
+}
+.top .logo{
+    display: inline-block;
+}
+.top .navigation{
+    float:right;
+}
+.navigation ul li{
+    float:left;
+    padding:15px 0px 0px 15px;
+    color:white;
+    font-weight: 600;
+}
