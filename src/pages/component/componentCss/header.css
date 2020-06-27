@@ -40,3 +40,10 @@
 .navigation ul li a:hover{
     color: rgb(242, 170, 170);
 }
+.navi_click{
+    background-color: white;
+    border-radius: 25px;
+}
+.navi_click > a{
+    color: rgb(242, 170, 170) !important;
+}

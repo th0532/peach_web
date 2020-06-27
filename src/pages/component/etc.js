@@ -1,5 +1,6 @@
 import React,{useState} from "react";
-import "./css/etc.css";
+import { Link } from 'react-router-dom';
+import "./componentCss/etc.css";
 
 const Etc = () =>{
     const list = [

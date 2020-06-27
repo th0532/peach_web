@@ -1,0 +1,49 @@
+.crewCreate{
+    width:50%;
+    margin:0 auto;
+    padding:30px 0px;
+}
+.crewCreate h1{
+    font-size:18px;
+    font-weight: 600;
+    margin: 15px 0px;
+}
+.crewCreate input{
+    height:30px;
+    padding:5px;
+    font-size:16px;
+}
+.crewCreate textarea{
+    padding:5px;
+    font-size:16px;
+}
+.category select, .area select{
+    margin-right: 15px;
+    height: 40px;
+    width: 15%;
+    font-size: 14px;
+}
+.category select option{
+    font-size: 16px;
+}
+.recruit h1{
+    display: inline-block;
+    margin-right: 30px;
+}
+.recruit input{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.recruit input:nth-child(3){
+    display: block;
+    width: 20%;
+}
+
+.writing input, .writing textarea{
+    width:100%;
+}
+.writing_desc{
+}
+.writing_desc textarea{
+    height:200px;
+}

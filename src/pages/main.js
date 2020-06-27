@@ -1,10 +1,10 @@
 import React,{useState} from "react";
-import Map from "../component/map";
-import Etc from "../component/etc";
-import PreView from "../component/preview";
-import "./css/content.css"
+import Map from "./component/map";
+import Etc from "./component/etc";
+import PreView from "./component/preview";
+import "./css/common.css"
 
-const Content = () => {
+const Main = () => {
     return (
         <div className={"content"}>
             <Map></Map>  
@@ -15,4 +15,4 @@ const Content = () => {
 }
 
 
-export default Content;
+export default Main;

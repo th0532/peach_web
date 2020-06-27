@@ -1,11 +1,11 @@
 import React from 'react';
 import { HashRouter, Route} from "react-router-dom";
-import Header from './component/header';
-import Content from './Route/content';
-import Login from './Route/login';
-import Signup from './Route/signup';
-import CrewFind from './Route/crewFind';
-import CrewCreate from './Route/crewCreate';
+import Header from './pages/component/header';
+import MainRoute from './Route/mainRoute';
+import LoginRoute from './Route/loginRoute';
+import SignupRoute from './Route/signupRoute';
+import CrewFindRoute from './Route/crewFindRoute';
+import CrewCreateRoute from './Route/crewCreateRoute';
 import './App.css';
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
     <div className="App">
       <HashRouter>
         <Header></Header>
-        <Route exact path="/" component={Content}/>
-        <Route path="/login/" component={Login}/>
-        <Route path="/signup" component={Signup}/>
-        <Route path="/crewFind" component={CrewFind}/>
-        <Route path="/crewCreate" component={CrewCreate}/>
+        <Route exact path="/" component={MainRoute}/>
+        <Route path="/login/" component={LoginRoute}/>
+        <Route path="/signup" component={SignupRoute}/>
+        <Route exact path="/crewFind" component={CrewFindRoute}/>
+        <Route path="/crewCreate" component={CrewCreateRoute}/>
       </HashRouter>
     </div>
   );

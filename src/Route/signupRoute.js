@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 const SignUp = () => {
     return(
-        <div style={{marginTop:300}}>
+        <div>
             <h1>SignUp</h1>
         </div>
     )

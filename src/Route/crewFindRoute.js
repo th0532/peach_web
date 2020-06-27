@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
-const CrewFind = () => {
+const CrewFind = (props) => {
     return(
-        <div style={{marginTop:300}}>
+        <div>
             <h1>CrewFind</h1>
         </div>
     )

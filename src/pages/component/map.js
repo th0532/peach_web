@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "./css/map.css";
+import "./componentCss/map.css";
 
 const Map = () => {
     return (
