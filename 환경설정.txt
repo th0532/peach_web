@@ -1,4 +1,16 @@
 peach_web project Setting
 
-$ npm install -g create-react-app
-$ create-react-app peach_web
+	$ npm install -g create-react-app
+	$ create-react-app peach_web
+
+git 에 빌드하여 배포하기
+	yarn add gh-pages --dev 패키지 설치후
+	package.json 파일을 수정
+	homepage 주소를 수정하고 predeploy와
+	deploy를 scripts에 추가합니다.
+	
+	 "deploy": "gh-pages -d build ",
+	 "predeploy": "npm run build"
+	 "homepage": "https://th0532.github.io/###/",
+
+yarn run deploy
