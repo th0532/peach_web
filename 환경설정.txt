@@ -1,0 +1,4 @@
+peach_web project Setting
+
+$ npm install -g create-react-app
+$ create-react-app peach_web
