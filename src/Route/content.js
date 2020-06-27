@@ -1,7 +1,7 @@
 import React,{useState} from "react";
-import Map from "./map";
-import Etc from "./etc";
-import PreView from "./preview";
+import Map from "../component/map";
+import Etc from "../component/etc";
+import PreView from "../component/preview";
 import "./css/content.css"
 
 const Content = () => {

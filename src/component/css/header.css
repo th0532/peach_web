@@ -9,7 +9,7 @@
     width:80%;
     margin:0 auto;
 }
-.top h1{
+.top .logo a{
     font-size:30px;
     font-weight: 600;
     color:white;
@@ -24,7 +24,19 @@
 }
 .navigation ul li{
     float:left;
-    padding:15px 0px 0px 15px;
     color:white;
     font-weight: 600;
+    margin-top: 2px;
+    padding:15px 0px;
+}
+.navigation ul li:hover{
+    background-color: white;
+    border-radius: 25px;
+}
+.navigation ul li a{
+    color:white;
+    padding:15px;
+}
+.navigation ul li a:hover{
+    color: rgb(242, 170, 170);
 }
