@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { Link } from 'react-router-dom';
 import "./componentCss/preview.css";
+import "./componentCss/preview.css";
 
 const PreView = () =>{
 
@@ -35,8 +36,6 @@ const PreView = () =>{
             desc_content:"일행만을 위한 편안한 공간에서 친구 및 가족과 오붓한 시간을 보내세요.",
             list_index:5
         },
-        
-
     ]
     
     return(

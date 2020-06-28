@@ -22,22 +22,22 @@
 .top .navigation{
     float:right;
 }
-.navigation ul li{
+.navigation > .pc_navigation ul li{
     float:left;
     color:white;
     font-weight: 600;
     margin-top: 2px;
     padding:15px 0px;
 }
-.navigation ul li:hover{
+.navigation > .pc_navigation ul li:hover{
     background-color: white;
     border-radius: 25px;
 }
-.navigation ul li a{
+.navigation > .pc_navigation ul li a{
     color:white;
     padding:15px;
 }
-.navigation ul li a:hover{
+.navigation > .pc_navigation ul li a:hover{
     color: rgb(242, 170, 170);
 }
 .navi_click{
@@ -46,4 +46,10 @@
 }
 .navi_click > a{
     color: rgb(242, 170, 170) !important;
+}
+
+@media (max-width: 768px) {
+    .navigation > .pc_navigation{
+        display: none;
+    }
 }

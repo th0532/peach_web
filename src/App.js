@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter, Route} from "react-router-dom";
 import Header from './pages/component/header';
+import Footer from './pages/component/footer';
 import MainRoute from './Route/mainRoute';
 import LoginRoute from './Route/loginRoute';
 import SignupRoute from './Route/signupRoute';
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" component={SignupRoute}/>
         <Route exact path="/crewFind" component={CrewFindRoute}/>
         <Route path="/crewCreate" component={CrewCreateRoute}/>
+        <Footer></Footer>
       </HashRouter>
     </div>
   );

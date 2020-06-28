@@ -17,6 +17,7 @@
 .Etc_list{
     flex:1;
     padding-right:1.3%;
+    
 }
 .Etc_list:last-child{
     padding:0;
@@ -27,10 +28,16 @@
     height: 250px;
     border:1px solid #e3e3e3;
     border-radius: 15px 15px 0px 0px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
 }
 .Etc_desc{
     border:1px solid #e3e3e3;
     border-radius: 0px 0px 15px 15px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
 }
 .Etc_img img{
     width: 100%;
@@ -46,4 +53,27 @@
 }
 .Etc_list dl dd{
     font-size: 14px;
+}
+@media (max-width: 768px) {
+    .Etc_title h1{
+        font-size: 1.3rem;
+    }
+    .etc{
+        width:90%;
+        margin:0 auto;
+    }
+    .Etc_list:last-child{
+        display: none;
+    }
+    .Etc_list{
+        padding:7px;
+    }
+    .Etc_img{
+        height: 150px;
+    }
+}
+@media (max-width: 424px) {
+    .Etc_title h1{
+        font-size: 1rem;
+    }
 }
