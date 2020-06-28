@@ -17,8 +17,8 @@ function App() {
         <Route exact path="/" component={MainRoute}/>
         <Route path="/login/" component={LoginRoute}/>
         <Route path="/signup" component={SignupRoute}/>
-        <Route exact path="/crewFind" component={CrewFindRoute}/>
-        <Route path="/crewCreate" component={CrewCreateRoute}/>
+        <Route exact path="/crewfind" component={CrewFindRoute}/>
+        <Route path="/crewcreate" component={CrewCreateRoute}/>
         <Footer></Footer>
       </HashRouter>
     </div>

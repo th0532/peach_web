@@ -47,6 +47,25 @@
 .writing_desc textarea{
     height:200px;
 }
+.thumbnail input{
+    border:1px solid black;
+}
+.profile_preview{
+    margin-top:20px;
+    width: 100%;
+}
+.submit_button button{
+    width:100%;
+    outline: none;
+    border-radius: 15px;
+    background-color: rgb(242, 170, 170);
+    color:white;
+    border:1px solid #d3d3d3;
+    margin:30px 0px;
+    height:40px;
+    font-size: 18px;
+    font-weight: 600;
+}
 @media (max-width: 1024px) {
 	.crewCreate{
         width:80%;
@@ -55,7 +74,7 @@
         width: 20%;
     }
     .recruit input:nth-child(3){
-        width: 30%;
+        width: 40%;
     }
 }
 

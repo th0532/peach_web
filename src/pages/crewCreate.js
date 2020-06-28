@@ -69,6 +69,20 @@ const Recruit = () =>{
 }
 
 const Writing = () => {
+    
+    const [file, setFile] = useState('');
+    const [previewURL, setPreviewURL] = useState('');
+
+    const handleFileOnChange = (e) => {
+        e.preventDefault();
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        reader.onloadend = () => {
+            setFile(file);
+            setPreviewURL(reader.result);
+        }
+        reader.readAsDataURL(file);
+      }
     return(
         <div className={"writing"}>
             <div className={"writing_title"}>
@@ -78,6 +92,18 @@ const Writing = () => {
             <div className={"writing_desc"}>
                 <h1>설명</h1>
                 <textarea type="text" placeholder="내용을 입력해주세요"></textarea>
+            </div>
+            <div className={"thumbnail"}>
+                <h1>썸네일 이미지</h1>
+                <input type='file' 
+                        accept='image/jpg,impge/png,image/jpeg,image/gif' 
+                        name='profile_img' 
+                        onChange={handleFileOnChange}>
+                </input>
+                {previewURL === '' ? '' : <img className='profile_preview' src={previewURL} alt="thumbnail"></img> }
+            </div>
+            <div className={"submit_button"}>
+                <button>등록</button>
             </div>
         </div>
     )

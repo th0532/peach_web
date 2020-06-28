@@ -1,0 +1,28 @@
+이미지 미리보기
+
+return 위에 ---------------------
+const [file, setFile] = useState('');
+    const [previewURL, setPreviewURL] = useState('');
+
+    const handleFileOnChange = (e) => {
+        e.preventDefault();
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        reader.onloadend = () => {
+            setFile(file);
+            setPreviewURL(reader.result);
+        }
+        reader.readAsDataURL(file);
+      }
+
+------------------return 안에
+<input type='file' 
+                        accept='image/jpg,impge/png,image/jpeg,image/gif' 
+                        name='profile_img' 
+                        onChange={handleFileOnChange}>
+</input>
+
+{previewURL === '' ? '' : <img className='profile_preview' src={previewURL} alt="thumbnail"></img> }
+
+
+

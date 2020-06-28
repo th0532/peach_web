@@ -5,21 +5,17 @@ import "./componentCss/etc.css";
 const Etc = () =>{
     const list = [
         {
-            imgLink:"https://picsum.photos/200/300/?blur=6",
-            desc_title:"가까운 여행지",
-            desc_content:"자동차로 금방 다녀올 수 있는 근교 여행지에서 휴식을 즐기세요."
+            imgLink:"https://cdn.pixabay.com/photo/2016/03/09/09/22/woman-photographer-1245761__340.jpg",
+            desc_title:"모임에 함께하세요",
+            desc_content:"모임에 참여하며 취미생활을 공유해보세요.",
+            type:"crewfind"
         },
         {
-            imgLink:"https://picsum.photos/200/300/?blur=7",
-            desc_title:"온라인 체험",
-            desc_content:"세계 각지의 호스트가 진행하고 모두 함께 즐기는 독특한 액티비티"
+            imgLink:"https://cdn.pixabay.com/photo/2019/11/20/11/15/needlework-4639828__340.jpg",
+            desc_title:"모임을 만들어 보세요",
+            desc_content:"모임을 직접 만들어 정기적인 모임을 가져보세요.",
+            type:"crewcreate"
         },
-        {
-            imgLink:"https://picsum.photos/200/300/?blur=8",
-            desc_title:"집 전체",
-            desc_content:"일행만을 위한 편안한 공간에서 친구 및 가족과 오붓한 시간을 보내세요."
-        },
-
     ]
     return(
         <div className={"etc"}>
@@ -29,16 +25,18 @@ const Etc = () =>{
             </div>
             <div className={"Etc_item"}>
                     {list.map((data,index) =>(
-                        <div className={"Etc_list"}>
-                            <div className={"Etc_img"}>
-                            <img src = {data.imgLink} alt="Etc_img"></img>
-                            </div>            
-                            <div className={"Etc_desc"}>
-                                <dl>
-                                    <dt>{data.desc_title}</dt>
-                                    <dd>{data.desc_content}</dd>
-                                </dl>
-                            </div>
+                        <div key={index} className={"Etc_list"}>
+                            <Link to = {data.type === "crewfind" ? "/crewfind" : "/crewcreate"}>
+                                <div className={"Etc_img"}>
+                                <img src = {data.imgLink} alt="Etc_img"></img>
+                                </div>            
+                                <div className={"Etc_desc"}>
+                                    <dl>
+                                        <dt>{data.desc_title}</dt>
+                                        <dd>{data.desc_content}</dd>
+                                    </dl>
+                                </div>
+                            </Link>
                         </div>
                     ))}
             </div>
