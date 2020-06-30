@@ -1,17 +1,14 @@
 import React, {useState} from "react";
-import "./css/common.css"
 import "./css/crewCreate.css"
 
 const crewCreate = () => {
     return(
-        <div className={"content"}>
             <div className={"crewCreate"}>
                     <Category></Category>
                     <Area></Area>
                     <Recruit></Recruit>
                     <Writing></Writing>
             </div>
-        </div>
     )
 }
 

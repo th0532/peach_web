@@ -70,6 +70,9 @@
     .Etc_img{
         height: 150px;
     }
+    .Etc_item {
+        margin-top:0px;
+    }
 }
 @media (max-width: 424px) {
     .Etc_title h1{

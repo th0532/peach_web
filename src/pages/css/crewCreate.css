@@ -30,10 +30,13 @@
     display: inline-block;
     margin-right: 30px;
 }
-.recruit input{
-    margin-left: 5px;
+/* checkbox */
+.recruit input:nth-child(2){
     vertical-align: middle;
+    zoom:1.3;
+    margin-left:10px;
 }
+/* data field */
 .recruit input:nth-child(3){
     display: block;
     width: 25%;

@@ -1,0 +1,17 @@
+.crew_category{
+    width:100%;
+}
+.crew_category:nth-child(2n-1){
+    background-color: rgb(255, 235, 235);
+}
+
+.crew_list_wrap{
+    width:80%;
+    height:100%;
+    margin:0 auto;
+    padding:20px 0px;
+}
+.category_title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}

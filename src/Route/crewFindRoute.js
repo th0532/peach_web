@@ -1,11 +1,12 @@
 import React, {useState} from "react";
+import CrewFind from "../pages/crewFind";
 
-const CrewFind = (props) => {
+const CrewFindRoute = () => {
     return(
-        <div>
-            <h1>CrewFind</h1>
+        <div className={"content"}>
+            <CrewFind></CrewFind>
         </div>
     )
 }
 
-export default CrewFind;
+export default CrewFindRoute;
