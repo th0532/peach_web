@@ -11,7 +11,9 @@
     margin:0 auto;
     padding:20px 0px;
 }
-.category_title{
-    font-size: 1.5rem;
-    font-weight: 600;
+
+@media (max-width: 480px) {
+	.crew_list_wrap{
+        width:95%;
+    }
 }

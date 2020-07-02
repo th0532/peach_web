@@ -12,9 +12,15 @@
     display: flex;
     margin-top:2%;
 }
-.crewCard h1{
+.category_title{
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-top:30px;
+    display: inline;
+}
+.category_more{
+    float:right;
+    margin-right:20px;
+    font-weight: 600;
 }
 .crewCard_item{
     background-color: white;

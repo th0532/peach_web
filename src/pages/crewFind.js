@@ -165,20 +165,14 @@ const CrewFind = () => {
 
     return(
         <div className={"crewFind"}>
-            <CrewCategoryWrap listdata = {list}/>
-        </div>
-    )
-}
-
-const CrewCategoryWrap = (props) => {
-    return (
-        <div className={"crew_wrap"}>
-            <CrewCategory categoryTitle="Outdoors & Adventure" listdata={props.listdata.category1}></CrewCategory>
-            <CrewCategory categoryTitle="Health & Wellness" listdata={props.listdata.category2}></CrewCategory>
-            <CrewCategory categoryTitle="Social" listdata={props.listdata.category3}></CrewCategory>
-            <CrewCategory categoryTitle="Tech" listdata={props.listdata.category4}></CrewCategory>
-            <CrewCategory categoryTitle="Art" listdata={props.listdata.category5}></CrewCategory>
-            <CrewCategory categoryTitle="Pets" listdata={props.listdata.category6}></CrewCategory>
+            <div className={"crew_wrap"}>
+                <CrewCategory categoryTitle="Outdoors & Adventure" listdata={list.category1}></CrewCategory>
+                <CrewCategory categoryTitle="Health & Wellness" listdata={list.category2}></CrewCategory>
+                <CrewCategory categoryTitle="Social" listdata={list.category3}></CrewCategory>
+                <CrewCategory categoryTitle="Tech" listdata={list.category4}></CrewCategory>
+                <CrewCategory categoryTitle="Art" listdata={list.category5}></CrewCategory>
+                <CrewCategory categoryTitle="Pets" listdata={list.category6}></CrewCategory>
+            </div>
         </div>
     )
 }
@@ -191,6 +185,5 @@ const CrewCategory = (props) =>{
             </div>
         </div>
     )
-
 }
 export default CrewFind;

@@ -1,0 +1,22 @@
+react-router 페이지이동시
+상단으로
+
+ScrollToTop.js
+import React,{useEffect} from 'react';
+import { withRouter } from 'react-router';
+
+const ScrollToTop = ({ children, location: { pathname } }) => {
+    useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+    
+    return children; 
+  };
+
+export default withRouter(ScrollToTop);
+
+
+이후
+app.js 에서 import하고
+<hashrouter>
+	<ScrollToTop>
+	</ScrollToTop>
+</hashrouter>
