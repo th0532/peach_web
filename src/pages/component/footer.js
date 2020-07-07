@@ -40,7 +40,7 @@ const Footer = (props) =>{
             <div className = {"mob_menu"}>
                 <ul>
                     <li><Link to="/" className={naviToggle1&&'mobile_navi_click'} onClick={() => naviClick("naviToggle1")}>Home</Link></li>
-                    <li><Link to="/crewFind" className={naviToggle2&&'mobile_navi_click'} onClick={() => naviClick("naviToggle2")}>모임탐색</Link></li>
+                    {/*<li><Link to="/crewFind" className={naviToggle2&&'mobile_navi_click'} onClick={() => naviClick("naviToggle2")}>모임탐색</Link></li>*/}
                     <li><Link to="/crewCreate" className={naviToggle3&&'mobile_navi_click'} onClick={() => naviClick("naviToggle3")}>모임만들기</Link></li>
                     <li><Link to="/login" className={naviToggle4&&'mobile_navi_click'} onClick={() => naviClick("naviToggle4")}>로그인</Link></li>
                 </ul>

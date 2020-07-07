@@ -5,7 +5,7 @@ import Footer from './pages/component/footer';
 import MainRoute from './Route/mainRoute';
 import LoginRoute from './Route/loginRoute';
 import SignupRoute from './Route/signupRoute';
-import CrewFindRoute from './Route/crewFindRoute';
+import CrewRoute from './Route/CrewRoute';
 import CrewCreateRoute from './Route/crewCreateRoute';
 import ScrollToTop from './Route/ScrollToTop';
 import './App.css';
@@ -19,7 +19,7 @@ function App() {
           <Route  onUpdate={() => window.scrollTo(0, 0)} exact path="/" component={MainRoute}/>
           <Route  onUpdate={() => window.scrollTo(0, 0)} path="/login/" component={LoginRoute}/>
           <Route  onUpdate={() => window.scrollTo(0, 0)} path="/signup" component={SignupRoute}/>
-          <Route  onUpdate={() => window.scrollTo(0, 0)} exact path="/crewfind" component={CrewFindRoute}/>
+          <Route  onUpdate={() => window.scrollTo(0, 0)} path="/crew" component={CrewRoute}/>
           <Route  onUpdate={() => window.scrollTo(0, 0)} path="/crewcreate" component={CrewCreateRoute}/>
           <Footer></Footer>
         </ScrollToTop>

@@ -1,7 +1,7 @@
 .crew_category{
     width:100%;
 }
-.crew_category:nth-child(2n-1){
+.crew_category:nth-child(2n){
     background-color: rgb(255, 235, 235);
 }
 
