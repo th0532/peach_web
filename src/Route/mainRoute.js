@@ -1,10 +1,10 @@
 import React,{useState} from "react";
 import Main from "../pages/main";
 
-const MainRoute = () => {
+const MainRoute = ({match}) => {
     return (
         <div>
-            <Main></Main>
+            <Main path={match}></Main>
         </div>
     )
 }

@@ -45,7 +45,7 @@ const Header = (props) =>{
                     <div className={"pc_navigation"}>
                         <ul>
                             <li className={naviToggle1&&'navi_click'}><Link to="/" onClick={() => naviClick("naviToggle1")}>Home</Link></li>
-                            {/*<li className={naviToggle2&&'navi_click'}><Link to="/crewfind" onClick={() => naviClick("naviToggle2")}>모임탐색</Link></li>*/}
+                            <li className={naviToggle2&&'navi_click'}><Link to="/crewfind" onClick={() => naviClick("naviToggle2")}>모임탐색</Link></li>
                             <li className={naviToggle3&&'navi_click'}><Link to="/crewcreate" onClick={() => naviClick("naviToggle3")}>모임만들기</Link></li>
                             <li className={naviToggle4&&'navi_click'}><Link to="/login" onClick={() => naviClick("naviToggle4")}>로그인</Link></li>
                         </ul>

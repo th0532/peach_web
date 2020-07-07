@@ -1,14 +1,14 @@
 import React,{useState} from "react";
 import Map from "./component/map";
-import CrewPreview from "./crewPreview";
 import "./css/common.css"
+import CrewPreview from "./crewPreview";
 // import Etc from "./component/etc";
 
-const Main = () => {
+const Main = (props) => {
     return (
         <div className={"content"}>
             <Map></Map>
-            <CrewPreview></CrewPreview>
+            <CrewPreview path = {props.path}></CrewPreview>
         </div>
     )
 }

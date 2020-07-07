@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import Crew from "../pages/crew";
+import CrewFind from "../pages/crewFind";
 
-const CrewRoute = ({match,location}) => {
+const CrewRoute = ({match}) => {
     return(
         <div className={"content"}>
-            <Crew path={match}></Crew>
+            <CrewFind path={match}></CrewFind>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./css/crewPreview.css";
+import "./css/crewFind.css";
 import CrewCard from "./component/crewCard";
 
 const Crew = (props) => {
@@ -45,7 +45,7 @@ const Crew = (props) => {
 
 const CrewCategory = (props) =>{
     return(
-        <div className={"crew_category"}>
+        <div className={"crew_category_item"}>
             <div className={"crew_list_wrap"}>
                 <CrewCard listdata = {props}></CrewCard> 
             </div>

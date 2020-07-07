@@ -1,0 +1,9 @@
+.crewDetail_wrap{
+    width: 80%;
+    margin:0 auto;
+}
+.crewDetail_wrap >h1{
+    margin-top: 100px;
+    font-size: 36px;
+    font-weight: 600;
+}
