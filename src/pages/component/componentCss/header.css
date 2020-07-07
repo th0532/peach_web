@@ -4,6 +4,7 @@
     position: fixed;
     background-color: rgb(242, 170, 170);
     top:0;
+    z-index: 110;
 }
 .top{
     width:80%;

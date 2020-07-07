@@ -1,6 +1,8 @@
 .map{
-    background-color: rgb(255, 235, 235);
-    padding:2% 0%;
-    height:100%;
-    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #react-naver-map div:nth-child(5){
+        display: none;
+    }
 }

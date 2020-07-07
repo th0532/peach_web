@@ -11,7 +11,7 @@ const Etc = () =>{
             type:"crewfind"
         },
         {
-            imgLink:"https://cdn.pixabay.com/photo/2019/11/20/11/15/needlework-4639828__340.jpg",
+            imgLink:"https://cdn.pixabay.com/photo/2016/03/09/09/22/woman-photographer-1245761__340.jpg",
             desc_title:"모임을 만들어 보세요",
             desc_content:"모임을 직접 만들어 정기적인 모임을 가져보세요.",
             type:"crewcreate"

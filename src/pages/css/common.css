@@ -2,4 +2,16 @@
     margin-top:50px;
     width:100%;
 }
-
+.map{
+    height:500px;
+}
+@media (max-width: 768px) {
+    .map{
+        height:350px;
+    }
+}
+@media (max-width: 424px) {
+    .map{
+        height:250px;
+    }
+}
