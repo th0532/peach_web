@@ -135,34 +135,9 @@ const CrewFind = (props) => {
             },
         ],
     }
-
-    const [areaFlag, setAreaFlag] = useState(false);
-    console.log(areaFlag);
-    const handleAreaFlag = () =>{
-        setAreaFlag(true);
-    }
     
     return(
         <div className={"crewFind"}>
-            <div className={"crew_category"}>
-               <h1>지역</h1>
-                <select onChange={handleAreaFlag}>
-                    <option>지역선택</option>
-                    <option>서울</option>
-                    <option>경기</option>
-                    <option>인천</option>
-                    <option>대전</option>
-               </select>
-                {areaFlag === true ? 
-                    <div className="area2">
-                        <h1>지역 2</h1>
-                            <select>
-                                <option>종로구</option>
-                                <option>마포구</option>
-                                <option>동작구</option>
-                            </select>
-                    </div> :""}
-            </div>
             <div className={"crew_wrap"}>
                 <CrewCategoryItem path={props.path} categoryTitle="Adventure" listdata={list.category1}></CrewCategoryItem>
                 <CrewCategoryItem path={props.path} categoryTitle="Health" listdata={list.category2}></CrewCategoryItem>

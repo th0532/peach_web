@@ -44,8 +44,34 @@ const Crew = (props) => {
 }
 
 const CrewCategory = (props) =>{
+   
+    const [areaFlag, setAreaFlag] = useState(false);
+    console.log(areaFlag);
+    const handleAreaFlag = () =>{
+        setAreaFlag(true);
+    }
+    
     return(
         <div className={"crew_category_item"}>
+            <div className={"crew_category"}>
+                <h1>지역</h1>
+                    <select onChange={handleAreaFlag}>
+                        <option>지역선택</option>
+                        <option>서울</option>
+                        <option>경기</option>
+                        <option>인천</option>
+                        <option>대전</option>
+                </select>
+                {areaFlag === true ? 
+                    <div className="area2">
+                        <h1>지역 2</h1>
+                            <select>
+                                <option>종로구</option>
+                                <option>마포구</option>
+                                <option>동작구</option>
+                            </select>
+                    </div> :""}
+            </div>
             <div className={"crew_list_wrap"}>
                 <CrewCard listdata = {props}></CrewCard> 
             </div>
