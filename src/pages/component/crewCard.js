@@ -8,7 +8,7 @@ const CrewCard = (props) =>{
     return(
         <div className={"crewCard"}>
             <h1 className="category_title">{props.listdata.categoryTitle}</h1>
-            <Link to={path === "/"? "/crewfind/" : "/crewCategory/:"+props.listdata.categoryTitle}>{path==="/crewcategory"?"":<span className="category_more">more</span>}</Link>
+            <Link to={path === "/"? "/crewfind/" : "/crewCategory/:"+props.listdata.categoryTitle}>{path==="/crewcategory"?"":<span className="category_more">More</span>}</Link>
             <div className={"crewCard_item_wrap"}>
                 {props.listdata.listdata !==undefined && props.listdata.listdata.map((data,index)=>(
                     <div key={index} className={"crewCard_item"}>

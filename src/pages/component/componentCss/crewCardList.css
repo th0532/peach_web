@@ -35,11 +35,13 @@
 }
 .crewCardList_desc{
     margin-top: 20px;
+    padding-right: 8px;
 }
 .crewCardList_box h3{
     font-weight: 600;
     padding-bottom: 10px;
     font-size: 19px;
+    text-overflow:ellipsis;overflow: hidden;white-space: nowrap;
 }
 .crewCardList_box p {
     font-size: 17px;
