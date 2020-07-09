@@ -178,8 +178,8 @@ function NaverMapAPI() {
     const [areaName, setAreaName] = useState(mapData[0].area);
     const [crewCount, setCrewCount] = useState(mapData[0].crewCount);
     
-    const displayOn = () =>{
-        alert("asd");
+    const displayOn = (areaName, crewCount) =>{
+        alert(areaName + " 개설현황 : " + crewCount);
     }
     const displayFlag = (type) =>{
         if(type === "map"){
@@ -198,11 +198,6 @@ function NaverMapAPI() {
         setCrewCount(count);
     }
 
-    // map table list click OO구 변경
-    // let mapInfoList = document.querySelector(".map_table ul li");
-    // mapInfoList.onClick= function(){
-    //     alert("Asd");
-    // }
     return (
         <NaverMap 
             mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
@@ -221,7 +216,7 @@ function NaverMapAPI() {
                 key={key}
                 position={{lat:data.lat , lng:data.lng}}
                 animation={2}
-                onClick={() => {displayOn();}}
+                onClick={() => {displayOn(data.area, data.crewCount);}}
             />
             );
         })}

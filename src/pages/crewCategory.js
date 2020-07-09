@@ -1,11 +1,47 @@
 import React, {useState} from "react";
 import "./css/crewFind.css";
-import CrewCard from "./component/crewCard";
+import CrewCardList from "./component/crewCardList";
 
 const Crew = (props) => {
     
     const list = {
         data : [
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/08/01/20/13/girl-1561989__340.jpg",
+                desc_title:"카누 모임",
+                desc_content:"카누 즐겨타는 사람 있나요",
+                list_index:1
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/11/29/09/49/adventure-1868817__340.jpg",
+                desc_title:"여행 갈 사람",
+                desc_content:"7월 21일 여행 갈 사람 모집합니다~",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613__340.jpg",
+                desc_title:"요트 패키지 여행 갈사람 구해요",
+                desc_content:"패키지 여행 갈 사람 구합니다",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2014/09/21/17/56/wanderer-455338__340.jpg",
+                desc_title:"등산 모임 구합니다",
+                desc_content:"등산 관심있는 사람 모집해요",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2017/08/02/20/24/people-2573216__340.jpg",
+                desc_title:"요가 다닐 사람",
+                desc_content:"같이 도봉구에서 요가 다닐사람 있나요",
+                list_index:1
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2017/08/07/14/02/people-2604149__340.jpg",
+                desc_title:"헬스 꾸준히 같이 할사람 구해요",
+                desc_content:"헬스 관심있는 사람 모집합니다",
+                list_index:2
+            },
             {
                 imgLink:"https://cdn.pixabay.com/photo/2016/08/19/14/45/books-1605416__340.jpg",
                 desc_title:"스터디 모임",
@@ -18,19 +54,6 @@ const Crew = (props) => {
                 desc_content:"패러 글라이딩 관심있는 사람 모집합니다~",
                 list_index:2
             },
-            {
-                imgLink:"https://cdn.pixabay.com/photo/2019/12/29/15/45/paragliding-4727377__340.jpg",
-                desc_title:"패러 글라이딩 하러 갈 사람~",
-                desc_content:"패러 글라이딩 관심있는 사람 모집합니다~",
-                list_index:2
-            },
-            {
-                imgLink:"https://cdn.pixabay.com/photo/2019/12/29/15/45/paragliding-4727377__340.jpg",
-                desc_title:"패러 글라이딩 하러 갈 사람~",
-                desc_content:"패러 글라이딩 관심있는 사람 모집합니다~",
-                list_index:2
-            },
-            
         ],
     }
 
@@ -73,7 +96,7 @@ const CrewCategory = (props) =>{
                     </div> :""}
             </div>
             <div className={"crew_list_wrap"}>
-                <CrewCard listdata = {props}></CrewCard> 
+                <CrewCardList listdata = {props}></CrewCardList> 
             </div>
         </div>
     )

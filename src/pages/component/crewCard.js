@@ -17,10 +17,12 @@ const CrewCard = (props) =>{
                                 <img src = {data.imgLink} alt ="crewCard_img"></img>
                             </div>            
                             <div className={"crewCard_desc"}>
-                                <dl>
-                                    <dt>{data.desc_title}</dt>
-                                    <dd>{data.desc_content}</dd>
-                                </dl>
+                                    <h3>{data.desc_title}</h3>
+                                    <div className={"crewCard_desc_info"}>
+                                        <p>작성자: OOOOO</p>
+                                        <p>모임 장소: 동작구</p>
+                                        <p>모임 날짜: 7월 21일</p>
+                                    </div>
                             </div>
                         </Link>
                     </div>

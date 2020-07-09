@@ -1,0 +1,75 @@
+.crewCardList_item_wrap{
+    display: inline-block;
+}
+.crewCardList_item{
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    margin-right: 1%;
+    flex:1;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    box-shadow: 1px 1px 5px 0px rgba(119,119,119,1);
+    width: 45%;
+    margin-right: 3%;
+    margin-top:3%;
+    height: 200px;
+}
+.crewCardList_box{
+    height: 100%;
+}
+.crewCardList_img{
+    width: 40%;
+    float:left;
+}
+.crewCardList_img img{
+    width:100%;
+    height: 200px;
+    border-radius: 15px 0px 0px 15px;
+}
+.crewCardList_desc{
+    height: 100%;
+    width:55%;
+    margin:0 auto;
+    float:right;
+}
+.crewCardList_desc{
+    margin-top: 20px;
+}
+.crewCardList_box h3{
+    font-weight: 600;
+    padding-bottom: 10px;
+    font-size: 19px;
+}
+.crewCardList_box p {
+    font-size: 17px;
+    margin-top: 7px;
+}
+.crewCardList_desc_info{
+    margin-top: 50px;
+}
+@media (max-width: 768px) {
+    .crewCardList{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .crewCardList_item{
+        width:100%;
+        height:150px;
+        margin-top: 20px;
+    }
+    .crewCardList_img img{
+        height: 150px;
+    }
+    .crewCardList_desc_info{
+        margin-top: 20px;
+    }
+    .crewCardList_box h3{
+        padding-bottom: 0px;
+        font-size: 16px;
+    }
+    .crewCardList_box p {
+        font-size: 14px;
+    }
+    
+}
