@@ -65,6 +65,16 @@
     padding:7px 0px;
     height:15px;
 }
+.map_table ul li{
+    border-bottom: none;
+    border-right: none;
+}
+.map_table ul li:nth-child(4n){
+    border-right: 1px solid #cccccc;
+}
+.map_table ul li:nth-child(n+25):nth-child(-n+28){
+    border-bottom: 1px solid #cccccc;
+}
 .map_table ul li:nth-child(4n+1){
     clear:left;
 }
@@ -92,6 +102,10 @@
         font-size: 15px;
         height: 14px;
     }
+    .map_table ul li:hover{
+        background-color: #69C;
+        color:white;
+    }
     .map_info{
         margin-top: 0;
     }
@@ -106,7 +120,5 @@
     .map_table ul li{
         font-size: 14px;
     }
-    /* .map_table ul li{
-        padding:8px 0px;
-    } */
+    
 }

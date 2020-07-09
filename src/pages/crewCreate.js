@@ -17,12 +17,12 @@ const Category = () =>{
         <div className={"category"}>
             <h1>분야</h1>
             <select>
-                <option>1차선택</option>
-                <option>1차선택_1</option>
-            </select>
-            <select>
-                <option>2차선택</option>
-                <option>2차선택_1</option>
+                <option>선택</option>
+                <option>Adventure</option>
+                <option>Health</option>
+                <option>Social</option>
+                <option>Tech</option>
+                <option>Art</option>
             </select>
         </div>
     )
@@ -32,17 +32,34 @@ const Area = () => {
     return(
         <div className={"area"}>
             <h1>지역</h1>
+                <span>서울시</span>
             <select>
-                <option>1차선택</option>
-                <option>1차선택_1</option>
-            </select>
-            <select>
-                <option>2차선택</option>
-                <option>2차선택_1</option>
-            </select>
-            <select>
-                <option>3차선택</option>
-                <option>3차선택_1</option>
+                <option>선택</option>
+                <option>강남구</option>
+                <option>강동구</option>
+                <option>강북구</option>
+                <option>강서구</option>
+                <option>관악구</option>
+                <option>광진구</option>
+                <option>구로구</option>
+                <option>금천구</option>
+                <option>노원구</option>
+                <option>도봉구</option>
+                <option>동대문구</option>
+                <option>동작구</option>
+                <option>마포구</option>
+                <option>서대문구</option>
+                <option>서초구</option>
+                <option>성동구</option>
+                <option>성북구</option>
+                <option>송파구</option>
+                <option>양천구</option>
+                <option>영등포구</option>
+                <option>용산구</option>
+                <option>은평구</option>
+                <option>종로구</option>
+                <option>중구</option>
+                <option>중랑구</option>
             </select>
         </div>
     )
@@ -99,7 +116,7 @@ const Writing = () => {
             </div>
             <div className={"writing_desc"}>
                 <h1>설명</h1>
-                <textarea type="text" placeholder="내용을 입력해주세요"></textarea>
+                <textarea type="text" placeholder="시간, 장소, 모임주기, 연락처 등 자유롭게 입력해주세요"></textarea>
             </div>
             <div className={"thumbnail"}>
                 <h1>썸네일 이미지 (선택)</h1>
