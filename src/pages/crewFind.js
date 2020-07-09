@@ -28,6 +28,42 @@ const CrewFind = (props) => {
                 desc_title:"등산 모임 구합니다",
                 desc_content:"등산 관심있는 사람 모집해요",
                 list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/11/29/09/49/adventure-1868817__340.jpg",
+                desc_title:"여행 갈 사람",
+                desc_content:"7월 21일 여행 갈 사람 모집합니다~",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613__340.jpg",
+                desc_title:"요트 패키지 여행 갈사람 구해요",
+                desc_content:"패키지 여행 갈 사람 구합니다",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2014/09/21/17/56/wanderer-455338__340.jpg",
+                desc_title:"등산 모임 구합니다",
+                desc_content:"등산 관심있는 사람 모집해요",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/11/29/09/49/adventure-1868817__340.jpg",
+                desc_title:"여행 갈 사람",
+                desc_content:"7월 21일 여행 갈 사람 모집합니다~",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613__340.jpg",
+                desc_title:"요트 패키지 여행 갈사람 구해요",
+                desc_content:"패키지 여행 갈 사람 구합니다",
+                list_index:2
+            },
+            {
+                imgLink:"https://cdn.pixabay.com/photo/2014/09/21/17/56/wanderer-455338__340.jpg",
+                desc_title:"등산 모임 구합니다",
+                desc_content:"등산 관심있는 사람 모집해요",
+                list_index:2
             }
         ],
         category2 : [

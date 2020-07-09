@@ -1,0 +1,11 @@
+캐러셀 슬라이드
+https://brainhubeu.github.io/react-carousel/docs/api/carousel
+
+$ npm i @brainhubeu/react-carousel
+
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
+<Carousel>
+  <img src={imageThree} />
+</Carousel>
