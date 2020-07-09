@@ -19,3 +19,6 @@ Naver Maps Package
 
 react-carousel
     $ npm i @brainhubeu/react-carousel
+
+react-range
+    $ yarn add react-range

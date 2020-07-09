@@ -4,9 +4,9 @@
     padding:30px 0px;
 }
 .crewCreate h1{
-    font-size:18px;
+    font-size:20px;
     font-weight: 600;
-    margin: 15px 0px;
+    margin: 20px 0px;
 }
 .crewCreate input{
     height:30px;
@@ -17,12 +17,19 @@
     padding:5px;
     font-size:16px;
 }
+.area{
+    margin-bottom: 20px;
+}
 .category select, .area select{
     margin-right: 15px;
     height: 40px;
-    width: 18%;
+    width: 30%;
     font-size: 16px;
-
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+    outline: none;
+    background-color: white;
 }
 .area select{
     font-size: 18px;
@@ -31,11 +38,11 @@
     font-weight: 600;
     font-size: 18px;
     margin-right: 20px;
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #bbbbbb;
+    border-bottom: 1px solid #bbbbbb;
     color:#808080;
     display: inline-block;
-    width: 18%;
+    width: 30%;
     height: 40px;
     vertical-align: top;
     line-height: 40px;
@@ -55,16 +62,20 @@
     margin-left:10px;
 }
 /* data field */
-.recruit input:nth-child(3){
+.recruit input:nth-child(3), .range{
     display: block;
-    width: 25%;
+    width: 60%;
+}
+
+.metting_date input[type=date]{
+    background-color: white;
+    border:1px solid #e3e3e3;
 }
 
 .writing input, .writing textarea{
     width:100%;
 }
-.writing_desc{
-}
+
 .writing_desc textarea{
     height:200px;
 }
@@ -73,7 +84,8 @@
 }
 .profile_preview{
     margin-top:20px;
-    width: 100%;
+    width: 280px;
+    height: 160px;
 }
 .submit_button button{
     width:100%;
@@ -87,23 +99,24 @@
     font-size: 18px;
     font-weight: 600;
 }
+
+
 @media (max-width: 1024px) {
 	.crewCreate{
         width:80%;
-    }
-    .recruit input:nth-child(3){
-        width: 40%;
     }
 }
 
 @media (max-width: 768px) {
     .category select, .area select{
-        width: 25%;
+        width: 35%;
     }
     .area span{
-        width: 25%;
+        width: 35%;
     }
-    
+    .recruit input:nth-child(3), .range{
+        width: 70%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -112,17 +125,21 @@
         margin-left:15px;
     }
     .category select, .area select{
-        width: 30%;
+        width: 40%;
     }
     .area span{
-        width: 30%;
+        width: 40%;
     }
-    .crewCreate input,.crewCreate select ,.crewCreate textarea {
+    .recruit input:nth-child(3), .range{
+        width: 80%;
+    }
+    .crewCreate input, .crewCreate select ,.crewCreate textarea {
         border: none;
         border-bottom: 1px solid #e3e3e3;
         border-top: 1px solid #e3e3e3;
         padding-left:5px;
     }
+    
     input[type=file]{
         border:none;
     }

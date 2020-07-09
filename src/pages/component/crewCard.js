@@ -29,7 +29,7 @@ const CrewCard = (props) =>{
             <h1 className="category_title">{props.listdata.categoryTitle}</h1>
             <Link to={path === "/"? "/crewfind/" : "/crewCategory/:"+props.listdata.categoryTitle}>{path==="/crewcategory"?"":<span className="category_more">More</span>}</Link>
             <div className={"crewCard_item_wrap"} >
-            <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = "600" offset={offsetValue}>
+            <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = "300" offset={offsetValue}>
                 {props.listdata.listdata !==undefined && props.listdata.listdata.map((data,index)=>(
                     <div key={index} className={"crewCard_item"}>
                         <Link to={"/crewdetail/"+props.listdata.categoryTitle +"/"+data.list_index}>
