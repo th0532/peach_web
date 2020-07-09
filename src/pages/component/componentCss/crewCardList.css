@@ -21,6 +21,7 @@
 .crewCardList_img{
     width: 40%;
     float:left;
+    margin-right: 20px;
 }
 .crewCardList_img img{
     width:100%;
@@ -29,13 +30,8 @@
 }
 .crewCardList_desc{
     height: 100%;
-    width:55%;
-    margin:0 auto;
-    float:right;
-}
-.crewCardList_desc{
-    margin-top: 20px;
     padding-right: 8px;
+    padding-top: 20px;
 }
 .crewCardList_box h3{
     font-weight: 600;
