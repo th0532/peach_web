@@ -38,12 +38,12 @@
     line-height: 30px;
 }
 .crewDetail_desc p:last-child{
-    min-height: 300px;
+    min-height: 320px;
 }
 @media (max-width: 768px) {
     .crewDetail_wrap {
         width: 80%;
-        height: 1000px;
+        margin-bottom: 50px;
     }
 }
 
