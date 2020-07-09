@@ -12,15 +12,15 @@ const CrewPreview = (props) => {
                 list_index:1
             },
             {
-                imgLink:"https://cdn.pixabay.com/photo/2019/12/29/15/45/paragliding-4727377__340.jpg",
-                desc_title:"패러 글라이딩 하러 갈 사람~",
-                desc_content:"패러 글라이딩 관심있는 사람 모집합니다~",
+                imgLink:"https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725__340.jpg",
+                desc_title:"큐브 관심있는 사람있나요",
+                desc_content:"큐브 같이 할사람 구해요",
                 list_index:2
             },
             {
-                imgLink:"https://cdn.pixabay.com/photo/2019/12/29/15/45/paragliding-4727377__340.jpg",
-                desc_title:"패러 글라이딩 하러 갈 사람~",
-                desc_content:"패러 글라이딩 관심있는 사람 모집합니다~",
+                imgLink:"https://cdn.pixabay.com/photo/2020/06/09/03/08/craft-5276736__340.jpg",
+                desc_title:"같이 마포구 도예수업 들을 사람 있을까요",
+                desc_content:"토요일 오후 다닐 사람 구합니다.",
                 list_index:2
             },
             {
@@ -50,9 +50,9 @@ const CrewPreview = (props) => {
                 list_index:1
             },
             {
-                imgLink:"https://cdn.pixabay.com/photo/2019/12/29/15/45/paragliding-4727377__340.jpg",
-                desc_title:"패러 글라이딩 하러 갈 사람~",
-                desc_content:"패러 글라이딩 관심있는 사람 모집합니다~",
+                imgLink:"https://cdn.pixabay.com/photo/2016/03/27/19/54/golf-1284011__340.jpg",
+                desc_title:"골프 치러 갈 사람 구해요",
+                desc_content:"일요일 오전에 출발하실수 있는사람 구합니다",
                 list_index:2
             },
         ],
