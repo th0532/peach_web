@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/peach_web/static/css/main.f72c3cf7.chunk.css",
+    "main.css": "/peach_web/static/css/main.83e5b27f.chunk.css",
     "main.js": "/peach_web/static/js/main.2248a940.chunk.js",
     "main.js.map": "/peach_web/static/js/main.2248a940.chunk.js.map",
     "runtime-main.js": "/peach_web/static/js/runtime-main.f20de25d.js",
@@ -8,15 +8,15 @@
     "static/js/2.b2f97771.chunk.js": "/peach_web/static/js/2.b2f97771.chunk.js",
     "static/js/2.b2f97771.chunk.js.map": "/peach_web/static/js/2.b2f97771.chunk.js.map",
     "index.html": "/peach_web/index.html",
-    "precache-manifest.1de5f6e3c3c4762aeebea110c10cc9b7.js": "/peach_web/precache-manifest.1de5f6e3c3c4762aeebea110c10cc9b7.js",
+    "precache-manifest.13294538ab410f64fa69ffc383a3d54c.js": "/peach_web/precache-manifest.13294538ab410f64fa69ffc383a3d54c.js",
     "service-worker.js": "/peach_web/service-worker.js",
-    "static/css/main.f72c3cf7.chunk.css.map": "/peach_web/static/css/main.f72c3cf7.chunk.css.map",
+    "static/css/main.83e5b27f.chunk.css.map": "/peach_web/static/css/main.83e5b27f.chunk.css.map",
     "static/js/2.b2f97771.chunk.js.LICENSE.txt": "/peach_web/static/js/2.b2f97771.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f20de25d.js",
     "static/js/2.b2f97771.chunk.js",
-    "static/css/main.f72c3cf7.chunk.css",
+    "static/css/main.83e5b27f.chunk.css",
     "static/js/main.2248a940.chunk.js"
   ]
 }
