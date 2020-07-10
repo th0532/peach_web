@@ -12,6 +12,7 @@ const CrewCard = (props) =>{
     const [slideCard, setSlideCard] = useState(2);
     const [arrowsFlag, setArrowsFlag] = useState(false);
     const [offsetValue, setOffsetValue] = useState(15);
+    const [animationSpeedValue, setAnimationSpeedValue] = useState(100);
     
     useEffect(() => {
         
@@ -21,6 +22,7 @@ const CrewCard = (props) =>{
             setSlideCard(4);
             setArrowsFlag(true);
             setOffsetValue(0)
+            setAnimationSpeedValue(300);
         }
       });
 
@@ -29,7 +31,7 @@ const CrewCard = (props) =>{
             <h1 className="category_title">{props.listdata.categoryTitle}</h1>
             <Link to={path === "/"? "/crewfind/" : "/crewCategory/:"+props.listdata.categoryTitle}>{path==="/crewcategory"?"":<span className="category_more">More</span>}</Link>
             <div className={"crewCard_item_wrap"} >
-            <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = "300" offset={offsetValue}>
+            <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = {animationSpeedValue} offset={offsetValue}>
                 {props.listdata.listdata !==undefined && props.listdata.listdata.map((data,index)=>(
                     <div key={index} className={"crewCard_item"}>
                         <Link to={"/crewdetail/"+props.listdata.categoryTitle +"/"+data.list_index}>

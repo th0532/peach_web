@@ -9,7 +9,7 @@
     margin: 20px 0px;
 }
 .crewCreate input{
-    height:30px;
+    height: 40px;
     padding:5px;
     font-size:16px;
 }
@@ -24,16 +24,14 @@
     margin-right: 15px;
     height: 40px;
     width: 30%;
-    font-size: 16px;
+    font-size: 18px;
     border: 1px solid #e3e3e3;
     border-radius: 5px;
     box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
     outline: none;
     background-color: white;
 }
-.area select{
-    font-size: 18px;
-}
+
 .area span{
     font-weight: 600;
     font-size: 18px;

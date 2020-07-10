@@ -136,7 +136,7 @@ const Writing = () => {
     )
 }
 
-const STEP = 0.1;
+const STEP = 1;
 const MIN = 0;
 const MAX = 100;
 

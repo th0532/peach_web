@@ -63,7 +63,7 @@
     text-align: center;
     border:1px solid #cccccc;
     padding:7px 0px;
-    height:15px;
+    height: 30px;
 }
 .map_table ul li{
     border-bottom: none;
@@ -100,7 +100,7 @@
     }
     .map_table ul li{
         font-size: 15px;
-        height: 14px;
+        height: 30px;
     }
     .map_table ul li:hover{
         background-color: #69C;

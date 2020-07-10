@@ -1,0 +1,48 @@
+.crew_category span{
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 20px;
+    border-top: 1px solid #a1a0a0;
+    border-bottom: 1px solid #a1a0a0;
+    color:#5a5a5a;
+    display: inline-block;
+    width: 15%;
+    height: 40px;
+    vertical-align: top;
+    line-height: 40px;
+    text-align: center;
+}
+.crew_category .area2{
+    width: 15%;
+    margin-left:0px;
+}
+.crew_category .area2 select{
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+    outline: none;
+    background-color: white;
+}
+@media (max-width: 1024px) {
+	.crew_category span{
+        width: 25%;
+        margin-right: 20px;
+    }
+    .crew_category .area2{
+        width: 25%;
+    }
+}
+
+@media (max-width: 478px) {
+	.crew_category span, .crew_category .area2 select{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .crew_category span, .crew_category .area2{
+        width:30%;
+    }
+    
+}
