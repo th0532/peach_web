@@ -137,12 +137,12 @@ const Writing = () => {
 }
 
 const STEP = 1;
-const MIN = 0;
-const MAX = 100;
+const MIN = 1;
+const MAX = 50;
 
 class RangeComponent extends React.Component {
   state = {
-    values: [50]
+    values: [25]
   };
   render() {
     return (
