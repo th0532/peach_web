@@ -170,17 +170,49 @@ function NaverMapAPI() {
             lat:"37.5311008",
             lng:"126.9810742"
         }
-    ]
-
-    const [displayOnOff, setdisplayFlag] = useState(false);
-    const [mapSelected, setMapSelected] = useState("map_selected");
-    const [listSelected, setListSelected] = useState("list_notSelected");
-    const [areaName, setAreaName] = useState(mapData[0].area);
-    const [crewCount, setCrewCount] = useState(mapData[0].crewCount);
+    ]    
     
     const displayOn = (areaName, crewCount) =>{
         alert(areaName + " 개설현황 : " + crewCount);
     }
+
+    return (
+        <NaverMap 
+            mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
+            style={{
+                width: '100%', // 네이버지도 가로 길이
+                height: '100%' // 네이버지도 세로 길이
+            }}
+            defaultCenter={{ lat: 37.562528, lng: 126.970833 }} // 지도 초기 위치
+            defaultZoom={11} // 지도 초기 확대 배율
+            zoomControl={true}
+            scrollWheel={false}
+        >
+        {mapData.map((data, key) =>{
+            return(
+                <div>
+                    <Marker
+                        key={key}
+                        position={{lat:data.lat , lng:data.lng}}
+                        animation={2}
+                        onClick={() => {displayOn(data.area, data.crewCount);}}
+                    />
+                    <MapListDivision mapData={mapData}></MapListDivision>
+                </div>
+            );
+        })}
+      </NaverMap>
+    );
+  }
+
+const MapListDivision = (props) => {
+
+    const [displayOnOff, setdisplayFlag] = useState(false);
+    const [mapSelected, setMapSelected] = useState("map_selected");
+    const [listSelected, setListSelected] = useState("list_notSelected");
+    const [areaName, setAreaName] = useState(props.mapData[0].area);
+    const [crewCount, setCrewCount] = useState(props.mapData[0].crewCount);
+
     const displayFlag = (type) =>{
         if(type === "map"){
             setdisplayFlag(false);
@@ -198,28 +230,8 @@ function NaverMapAPI() {
         setCrewCount(count);
     }
 
-    return (
-        <NaverMap 
-            mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
-            style={{
-                width: '100%', // 네이버지도 가로 길이
-                height: '100%' // 네이버지도 세로 길이
-            }}
-            defaultCenter={{ lat: 37.562528, lng: 126.970833 }} // 지도 초기 위치
-            defaultZoom={11} // 지도 초기 확대 배율
-            zoomControl={true}
-            scrollWheel={false}
-        >
-        {mapData.map((data, key) =>{
-            return(
-            <Marker
-                key={key}
-                position={{lat:data.lat , lng:data.lng}}
-                animation={2}
-                onClick={() => {displayOn(data.area, data.crewCount);}}
-            />
-            );
-        })}
+    return(
+        <div>
         <div className="display_type">
             <ul>
                 <li onClick = {() => displayFlag("map")} className={mapSelected}>Map</li>
@@ -231,7 +243,7 @@ function NaverMapAPI() {
                 <div className="map_table">
                     <h1>관측망 현황</h1>
                     <ul>
-                    {mapData.map((data, index)=>(
+                    {props.mapData.map((data, index)=>(
                         <li key={index} onClick={()=>areaNameChange(data.area,data.crewCount)}>{data.area}</li>  
                     ))}
                         <li></li>
@@ -244,10 +256,10 @@ function NaverMapAPI() {
                 </div>
             </div>:""
         }
-        
-      </NaverMap>
-    );
-  }
+        </div>
+
+    )
+}
 
 export default Map;
 
