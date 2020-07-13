@@ -7,12 +7,9 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 const CrewCard = (props) =>{
     
-    let path = props.listdata.path.path;
-    if (path === "/"){
-        path = "/crewfind";
-    }else{
-        path = "/crewcategory";
-    }
+    let pathNow = props.listdata.path.path;
+    let path = "/crewcategory";
+    
     // arrows="true"
     const [width, setWidth] = useState();
     const [slideCard, setSlideCard] = useState(2);
@@ -37,7 +34,7 @@ const CrewCard = (props) =>{
             <Link to={{
                 pathname:`${path}/${props.listdata.categoryTitle}`,
             }}>
-                {<span className="category_more">More</span>}
+                {pathNow==="/crewfind" ? <span className="category_more">More</span>:""}
             </Link>
             <div className={"crewCard_item_wrap"} >
                 <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = {animationSpeedValue} offset={offsetValue}>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./componentCss/footer.css";
 
 const Footer = (props) =>{
-    const [naviToggle1, setNaviToggle1] = useState(false);
+    const [naviToggle1, setNaviToggle1] = useState(true);
     const [naviToggle2, setNaviToggle2] = useState(false);
     const [naviToggle3, setNaviToggle3] = useState(false);
     const [naviToggle4, setNaviToggle4] = useState(false);

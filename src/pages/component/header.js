@@ -1,21 +1,28 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import "./componentCss/header.css";
 
 const Header = (props) =>{
-    const [naviToggle1, setNaviToggle1] = useState(false);
+    const [naviToggle1, setNaviToggle1] = useState(true);
     const [naviToggle2, setNaviToggle2] = useState(false);
     const [naviToggle3, setNaviToggle3] = useState(false);
     const [naviToggle4, setNaviToggle4] = useState(false);
+    const [widthFlag, setWidth] = useState(true);
 
+    
     const naviClick = (type) =>{
         if (type === "naviToggle1"){
             setNaviToggle1(true);
             setNaviToggle2(false);
             setNaviToggle3(false);
             setNaviToggle4(false);
-
-        }else if(type === "naviToggle2"){
+            
+            const width = window.innerWidth;
+            if(width <= 768){
+                setWidth(false);
+            }        
+        }
+        else if(type === "naviToggle2"){
             setNaviToggle1(false);
             setNaviToggle2(true);
             setNaviToggle3(false);
@@ -39,7 +46,7 @@ const Header = (props) =>{
         <div className = {"header"}>
             <div className = {"top"}>
                 <div className = {"logo"}>
-                    <Link to="/" onClick={() => naviClick("naviToggle1")} >Peach</Link>
+                    {widthFlag ? <Link to="/" onClick={() => naviClick("naviToggle1")}>Peach</Link>:<Link>Peach</Link>}
                 </div>
                 <div className = {"navigation"}>
                     <div className={"pc_navigation"}>
