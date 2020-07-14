@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/peach_web/static/css/main.d32464a9.chunk.css",
-    "main.js": "/peach_web/static/js/main.a38c5edd.chunk.js",
-    "main.js.map": "/peach_web/static/js/main.a38c5edd.chunk.js.map",
+    "main.css": "/peach_web/static/css/main.0bda4d10.chunk.css",
+    "main.js": "/peach_web/static/js/main.fdc08be5.chunk.js",
+    "main.js.map": "/peach_web/static/js/main.fdc08be5.chunk.js.map",
     "runtime-main.js": "/peach_web/static/js/runtime-main.f20de25d.js",
     "runtime-main.js.map": "/peach_web/static/js/runtime-main.f20de25d.js.map",
     "static/css/2.9e5c3921.chunk.css": "/peach_web/static/css/2.9e5c3921.chunk.css",
     "static/js/2.999e0d69.chunk.js": "/peach_web/static/js/2.999e0d69.chunk.js",
     "static/js/2.999e0d69.chunk.js.map": "/peach_web/static/js/2.999e0d69.chunk.js.map",
     "index.html": "/peach_web/index.html",
-    "precache-manifest.674d436e439d1206a62cffafbaf5e411.js": "/peach_web/precache-manifest.674d436e439d1206a62cffafbaf5e411.js",
+    "precache-manifest.6054f5cfc1ad9de04cce3252199985e5.js": "/peach_web/precache-manifest.6054f5cfc1ad9de04cce3252199985e5.js",
     "service-worker.js": "/peach_web/service-worker.js",
     "static/css/2.9e5c3921.chunk.css.map": "/peach_web/static/css/2.9e5c3921.chunk.css.map",
-    "static/css/main.d32464a9.chunk.css.map": "/peach_web/static/css/main.d32464a9.chunk.css.map",
+    "static/css/main.0bda4d10.chunk.css.map": "/peach_web/static/css/main.0bda4d10.chunk.css.map",
     "static/js/2.999e0d69.chunk.js.LICENSE.txt": "/peach_web/static/js/2.999e0d69.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f20de25d.js",
     "static/css/2.9e5c3921.chunk.css",
     "static/js/2.999e0d69.chunk.js",
-    "static/css/main.d32464a9.chunk.css",
-    "static/js/main.a38c5edd.chunk.js"
+    "static/css/main.0bda4d10.chunk.css",
+    "static/js/main.fdc08be5.chunk.js"
   ]
 }
