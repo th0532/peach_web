@@ -6,7 +6,7 @@ import CrewCardList from "./component/crewCardList";
 const Crew = (props) => {
     const path = props.location.pathname.split("/");
     const path_now = path[2];
-    console.log(path_now);
+    console.log(props);
 
     const list = {
         category1 : [

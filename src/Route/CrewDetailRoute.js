@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import CrewDetail from "../pages/crewDetail";
 
-const CrewDetailRoute = ({match}) => {
+const CrewDetailRoute = (props) => {
     return(
         <div className={"content"}>
-            <CrewDetail path={match}></CrewDetail>
+            <CrewDetail path={props.match}></CrewDetail>
         </div>
     )
 }

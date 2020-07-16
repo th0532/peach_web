@@ -12,7 +12,8 @@ const CrewDetail = (props) => {
         desc_content: "",
         desc_title: "",
         prevPage: "",
-        user_name:""
+        user_name:"",
+        area:""
     });
 
     useEffect(() => {

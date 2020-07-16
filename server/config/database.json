@@ -1,0 +1,7 @@
+{
+    "host": "localhost",
+    "user": "admin",
+    "password": "",
+    "port": "3306",
+    "database": "peach"
+}    

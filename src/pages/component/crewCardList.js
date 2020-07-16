@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "./componentCss/crewCardList.css";
 
 const CrewCardList = (props) =>{
-    console.log(props)
     const data = props.listdata.listdata;
     return(
         <div className={"crewCardList"}>

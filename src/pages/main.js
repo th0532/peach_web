@@ -5,10 +5,11 @@ import CrewPreview from "./crewPreview";
 // import Etc from "./component/etc";
 
 const Main = (props) => {
+
     return (
         <div className={"content"}>
             <Map></Map>
-            <CrewPreview path = {props.path}></CrewPreview>
+            <CrewPreview path = {props.path} listdataNew={props.listdataNew} listdataHot={props.listdatHot}></CrewPreview>
         </div>
     )
 }

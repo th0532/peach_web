@@ -190,7 +190,7 @@ function NaverMapAPI() {
         >
         {mapData.map((data, key) =>{
             return(
-                <div>
+                <div key = {key}>
                     <Marker
                         key={key}
                         position={{lat:data.lat , lng:data.lng}}

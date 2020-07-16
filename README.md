@@ -28,3 +28,6 @@ Axios
 
 Cros
     $yarn install cros
+
+Mysql
+    $yarn add mysql-plus

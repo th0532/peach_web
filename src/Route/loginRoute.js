@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
-const Login = () => {
+const Login = (props) => {
+    console.log(props)
     return(
         <div>
             <h1>login</h1>
