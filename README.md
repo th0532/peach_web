@@ -22,3 +22,9 @@ react-carousel
 
 react-range
     $ yarn add react-range
+
+Axios
+    $yarn add axios
+
+Cros
+    $yarn install cros

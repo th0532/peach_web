@@ -74,22 +74,4 @@ const CrewCardListItem = (props) => {
     
 }
 
-// <div className={"crewCard_item_wrap"}>
-//                 {props.listdata.listdata !==undefined && props.listdata.listdata.map((data,index)=>(
-//                     <div key={index} className={"crewCard_item"}>
-//                         <Link to={"/crewdetail/"+props.listdata.categoryTitle +"/"+data.list_index}>
-//                             <div className={"crewCard_img"}>
-//                                 <img src = {data.imgLink} alt ="crewCard_img"></img>
-//                             </div>            
-//                             <div className={"crewCard_desc"}>
-//                                 <dl>
-//                                     <dt>{data.desc_title}</dt>
-//                                     <dd>{data.desc_content}</dd>
-//                                 </dl>
-//                             </div>
-//                         </Link>
-//                     </div>
-//                 ))}
-//             </div>
-
 export default CrewCardList;

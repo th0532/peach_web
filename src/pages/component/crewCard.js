@@ -6,7 +6,6 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 
 const CrewCard = (props) =>{
-    console.log(props);
     
     let pathNow = props.listdata.path.path;
     let path = "/crewcategory";
