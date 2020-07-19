@@ -3,22 +3,24 @@ import { Link } from 'react-router-dom';
 import "./componentCss/crewCardList.css";
 
 const CrewCardList = (props) =>{
-    const data = props.listdata.listdata;
+const data = props.listdata.listdata;
+console.log(props)
     return(
         <div className={"crewCardList"}>
-            <h1 className="category_title">{props.listdata.categoryTitle}</h1>
+            <h1 className="category_title">{data[0].category}</h1>
             <div className={"crewCardList_item_wrap"}>
                 {data !==undefined && data.map((data,index)=>(
                     <CrewCardListItem
-                        key={data.list_index}
-                        list_index={data.list_index}
+                        key={data.num}
+                        list_index={data.num}
                         category = {data.category}
-                        imgLink={data.imgLink}
-                        desc_title={data.desc_title}
-                        desc_content={data.desc_content}
+                        imgLink={data.img}
+                        desc_title={data.title}
+                        desc_content={data.content}
                         date={data.date}
-                        user_name={data.user_name}
+                        user_name={data.name}
                         comment_data={data.comment_data}
+                        area={data.area}
                     >
                     </CrewCardListItem>
                 ))}
@@ -28,16 +30,15 @@ const CrewCardList = (props) =>{
 }
 
 const CrewCardListItem = (props) => {
-// console.log(props)
     const list_index = props.list_index;
     const user_name = props.user_name;
-    const date = props.date;
+    const date = props.date.substr(0,10);;
     const desc_title = props.desc_title;
     const imgLink = props.imgLink;
     const desc_content = props.desc_content;
     const category = props.category;
-    const prevPage = props.prevPage;
     const comment_data = props.comment_data;
+    const area = props.area;
 
     return(
         <div key={list_index} className={"crewCardList_item"}>
@@ -49,7 +50,6 @@ const CrewCardListItem = (props) => {
                     desc_title:desc_title,
                     desc_content:desc_content,
                     category:category,
-                    prevPage:prevPage,
                     comment_data:comment_data
                 }
             }}>
@@ -60,9 +60,9 @@ const CrewCardListItem = (props) => {
                     <div className={"crewCardList_desc"}>
                         <h3>{desc_title}</h3>
                         <div className={"crewCardList_desc_info"}>
-                            <p>작성자: OOOOO</p>
-                            <p>모임 장소: 마포구</p>
-                            <p>모임 날짜: 7월 21일</p>
+                            <p>작성자: {user_name}</p>
+                            <p>모임 장소:{area}</p>
+                            <p>모임 날짜:{date}</p>
                         </div>
                     </div>
                 </div>            

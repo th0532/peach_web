@@ -7,11 +7,8 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 const CrewCard = (props) =>{
   const [loading , setLoading] = useState(false);
+    let pathNow = props.path.path;
     
-    // let pathNow = props.listdata.path.path;
-    // let path = "/crewcategory";
-    
-    // arrows="true"
     const [width, setWidth] = useState();
     const [slideCard, setSlideCard] = useState(2);
     const [arrowsFlag, setArrowsFlag] = useState(false);
@@ -29,7 +26,6 @@ const CrewCard = (props) =>{
         }
         if( props.listdata !== undefined){
             setLoading(true);
-            console.log(props.listdata)
         }
 
       });
@@ -37,11 +33,11 @@ const CrewCard = (props) =>{
     return(
         <div className={"crewCard"}>
             <h1 className="category_title">{props.categoryTitle}</h1>
-            {/*<Link to={{
-                pathname:`${path}/${props.listdata.categoryTitle}`,
+            <Link to={{
+                pathname:`/crewcategory/${props.categoryTitle}`
             }}>
                 {pathNow==="/crewfind" ? <span className="category_more">More</span>:""}
-        </Link>*/}
+            </Link>
             <div className={"crewCard_item_wrap"} >
                 <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = {animationSpeedValue} offset={offsetValue}>
                     {loading && props.listdata.map(data=>(
