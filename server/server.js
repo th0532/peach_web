@@ -10,7 +10,21 @@ mysql_dbc.test_open(connection);
 
 app.use(cors()); 
 app.use(bodyParser.json());
+// 맵 데이터
+app.use('/api/main/map', (req, res) => {
+    const query =   "select cd.area, count(map.area) as count, map.lat, map.lng"+
+                    " from crewdata as cd"+
+                    " Join mapinfo as map"+
+                    " ON cd.area = map.area"+
+                    " GROUP by cd.area;";
+    console.log(query)
+    connection.query(query, (err, rows, fields) => {
+            res.json({mapAll:rows});
+        }
+    )
+});
 
+// 메인 NEW 데이터 
 app.use('/api/main/crewdata/New', (req, res) => {
     connection.query(
         'SELECT * FROM `crewdata` order by date desc LIMIT 5',
@@ -32,7 +46,7 @@ app.use('/api/main/crewdata/Hot', (req, res) => {
 
 // crewFind 페이지 카테고리별 데이터
 app.use('/api/crewfind/crewdata', (req, res)=> {
-    let query = 
+    const query = 
     "SELECT * FROM crewdata WHERE category ='Adventure';"+
     "SELECT * FROM crewdata WHERE category ='Health';"+
     "SELECT * FROM crewdata WHERE category ='Social';"+
@@ -44,6 +58,7 @@ app.use('/api/crewfind/crewdata', (req, res)=> {
     )
 });
 
+// crewCategory 카테고리별 페이지
 app.use('/api/crewcategory:category', (req, res)=> {
     let category = req.params.category;
     let query = "SELECT * FROM crewdata WHERE category ='"+category+"';"

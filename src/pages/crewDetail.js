@@ -2,7 +2,6 @@ import React, {useState,useEffect} from "react";
 import "./css/crewDetail.css";
 
 const CrewDetail = (props) => {
-    console.log(props.listdata[0]);
     const data = props.listdata[0];
     // const [data, setData] = useState({
     //     category: "",

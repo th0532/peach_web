@@ -6,7 +6,7 @@ import CrewPreview from "./crewPreview";
 const Main = (props) => {
     return (
         <div className={"content"}>
-            <Map></Map>
+            {props.mapdata && <Map mapdata={props.mapdata}></Map>}
             <CrewPreview path = {props.path} listdataNew={props.listdataNew} listdataHot={props.listdatHot}></CrewPreview>
         </div>
     )
