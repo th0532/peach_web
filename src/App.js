@@ -8,7 +8,7 @@ import LoginRoute from './Route/loginRoute';
 import SignupRoute from './Route/signupRoute';
 import CrewCategoryRoute from './Route/CrewCategoryRoute';
 import CrewFindRoute from './Route/CrewFindRoute';
-import CrewDetail from './pages/crewDetail';
+import CrewDetailRoute from './Route/CrewDetailRoute';
 import CrewCreateRoute from './Route/crewCreateRoute';
 import ScrollToTop from './Route/ScrollToTop';
 import './App.css';
@@ -25,7 +25,7 @@ function App() {
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/signup" component={SignupRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewcategory" component={CrewCategoryRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewfind" component={CrewFindRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewdetail" component={CrewDetail}/>
+          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewdetail" component={CrewDetailRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewcreate" component={CrewCreateRoute}/>
           <Footer></Footer>
         </ScrollToTop>

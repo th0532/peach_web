@@ -6,10 +6,14 @@ const CrewCategoryRoute = (props) => {
     const [categorydata, setCategorydata] = useState();
     const [isLoading, setisLoadding] = useState()
     const path = props.location.pathname.split("/");
-    const path_now = path[2];
+    const path_category = path[2];
     const getData = async() =>{
         axios
-        .get('http://localhost:5000/api/crewcategory/'+path_now)
+        .get('http://localhost:5000/api/crewcategory'+path_category,null,{
+            params: {
+                path_category,
+              }
+        })
         .then(({ data }) => {
             setCategorydata(data.crewdata);
             setisLoadding(true)

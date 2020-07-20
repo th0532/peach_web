@@ -30,7 +30,7 @@ app.use('/api/main/crewdata/Hot', (req, res) => {
 });
 
 
-// crewFind 페이지 카테고리별 데이터 
+// crewFind 페이지 카테고리별 데이터
 app.use('/api/crewfind/crewdata', (req, res)=> {
     let query = 
     "SELECT * FROM crewdata WHERE category ='Adventure';"+
@@ -43,45 +43,30 @@ app.use('/api/crewfind/crewdata', (req, res)=> {
         }
     )
 });
-app.use('/api/crewcategory/Adventure', (req, res)=> {
-    let query = "SELECT * FROM crewdata WHERE category ='Adventure';"
-      connection.query(query, function(err,rows){
+
+app.use('/api/crewcategory:category', (req, res)=> {
+    let category = req.params.category;
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"';"
+    connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }
     )
 });
 
-app.use('/api/crewcategory/Health', (req, res)=> {
-    let query = "SELECT * FROM crewdata WHERE category ='Health';"
-      connection.query(query, function(err,rows){
+app.use('/api/crewdetail:categoryId', (req, res)=> {
+    // params 2개 전달 받는법 추후 공부,,
+    let arr = req.params.categoryId.split(":");
+    let category = arr[0];
+    let id = arr[1];
+    
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&&num='"+id+"'";
+
+    connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }
     )
 });
 
-app.use('/api/crewcategory/Social', (req, res)=> {
-    let query = "SELECT * FROM crewdata WHERE category ='Social';"
-      connection.query(query, function(err,rows){
-            res.json({crewdata:rows});
-        }
-    )
-});
-
-app.use('/api/crewcategory/Tech', (req, res)=> {
-    let query = "SELECT * FROM crewdata WHERE category ='Tech';"
-      connection.query(query, function(err,rows){
-            res.json({crewdata:rows});
-        }
-    )
-});
-
-app.use('/api/crewcategory/Art', (req, res)=> {
-    let query = "SELECT * FROM crewdata WHERE category ='Art';"
-      connection.query(query, function(err,rows){
-            res.json({crewdata:rows});
-        }
-    )
-});
 
 app.use('/api/test', (req, res)=> res.json({username:'bryan'}));
 
