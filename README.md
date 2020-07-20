@@ -1,6 +1,7 @@
 ## Peach WebPage Project
 ## Skils
     React, React Hooks, Router, Naver Map, carousel Slide
+    Node.js, Express
 
 ## URL 바로가기
 <https://th0532.github.io/peach_web/>
