@@ -1,25 +1,57 @@
-import React, {useState,useEffect} from "react";
+import React, {useState,useEffect, useCallback} from "react";
 import "./css/crewDetail.css";
+import axios from "axios";
 
 const CrewDetail = (props) => {
     const data = props.listdata[0];
-    // const [data, setData] = useState({
-    //     category: "",
-    //     comment_data:[
-    //         {user_name: "", comment: ""},
-    //         {user_name: "", comment: ""}
-    //     ],
-    //     date: "",
-    //     desc_content: "",
-    //     desc_title: "",
-    //     prevPage: "",
-    //     user_name:"",
-    //     area:""
-    // });
+    const [commentValue, setCommentValue] = useState()
+    const [name, setName] = useState("test")
+    const [id, setId] = useState("test")
+    const [category, setcategory] = useState()
+    const [num, setNum] = useState()
+    const [a, setA] = useState()
+   
+    let day = new Date();
+    let y = day.getFullYear();
+    let m = day.getMonth()+1;
+    let d = day.getDate();
+    let h = day.getHours();
+    let i = day.getMinutes();
 
-    useEffect(() => {
-    });
- 
+    let time = y+"-"+m+"-"+d+" "+h+":"+i;
+    
+    const onChangeValue = e =>{
+        setCommentValue(e.target.value);
+    }
+    
+    const onFormSubmit = e => {
+        e.preventDefault();
+        axios
+        .post('http://localhost:5000/api/insert/crewdetail/comment',null,{
+            params: {
+                num,
+                id,
+                name,
+                category,
+                time,
+                commentValue,
+              }
+        })
+        .then(() => {
+            // 효율적이지 않음,,, rerender할 수 있는방법 2시간째 못찾음 ㅠㅠㅠ
+            window.location.reload();
+        })
+        .catch(e => {  // API 호출이 실패한 경우
+
+        });
+        // send to server with e.g. `window.fetch`
+      }
+   
+    useEffect(()=>{
+        setcategory(data.category);
+        setNum(data.num);
+    })
+   
     return(
         <div className={"crewDetail"}>
             <div className={"crewDetail_wrap"}>
@@ -35,11 +67,13 @@ const CrewDetail = (props) => {
                     </div>
                 </div>
                 <div className={"crewDetail_comment_wrap"}>
-                    <Comment data={data.comment_data}></Comment>
+                    <Comment data={props.comment}></Comment>
                 </div>
-                <div className={"crewDetail_comment_write"}>
-                    <input className={"crewDetail_comment_write_input"} placeholder="댓글을 입력하세요"></input>
-                </div>
+                <form onSubmit={onFormSubmit}>
+                    <div className={"crewDetail_comment_write"}>
+                        <input onChange={onChangeValue} className={"crewDetail_comment_write_input"} name="content" placeholder="댓글을 입력하세요"></input>
+                    </div>
+                </form>
             </div>
         </div>
     )
@@ -51,8 +85,8 @@ const Comment = (props) => {
         {props.data?
             props.data.map((data, index)=> (
                 <div className={"crewDetail_comment_data"}>
-                    <p className={"crewDetail_comment_data_name"}>{data.user_name}</p>
-                    <p className={"crewDetail_comment_data_desc"}>{data.comment}</p>
+                    <p className={"crewDetail_comment_data_name"}>{data.name}</p>
+                    <p className={"crewDetail_comment_data_desc"}>{data.content}</p>
                 </div>
             ))
         :""}

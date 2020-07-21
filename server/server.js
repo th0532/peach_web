@@ -1,5 +1,6 @@
 const fs = require('fs');
 const express = require('express');
+const router = express.Router();
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -17,7 +18,6 @@ app.use('/api/main/map', (req, res) => {
                     " Join mapinfo as map"+
                     " ON cd.area = map.area"+
                     " GROUP by cd.area;";
-    console.log(query)
     connection.query(query, (err, rows, fields) => {
             res.json({mapAll:rows});
         }
@@ -81,7 +81,36 @@ app.use('/api/crewdetail:categoryId', (req, res)=> {
         }
     )
 });
+// 댓글 데이터
+app.use('/api/crewdetail/comment:num', (req, res)=> {
+    // params 2개 전달 받는법 추후 공부,,
+    let num = req.params.num;
+    
+    let query = "SELECT * FROM `crew_comment` where postnum = '"+num+"'";
+    connection.query(query, function(err,rows){
+            res.json({comment:rows});
+        }
+    )
+});
 
+// 댓글 등록
+app.post('/api/insert/crewdetail/comment', (req, res)=> {
+   
+    console.log(req.query);
+    const num = req.query.num;
+    const name = req.query.name;
+    const id = req.query.id;
+    const category = req.query.category;
+    const time = req.query.time;
+    const commentValue = req.query.commentValue;
+    const query = "INSERT INTO `crew_comment`(`postnum`, `category`, `id`, `date`, `name`, `content`) VALUES "+ 
+                    "("+num+",'"+category+"','"+id+"','"+time+"','"+name+"','"+commentValue+"')";
+    console.log(query);
+    connection.query(query, function(err,rows){
+            res.json({comment:rows});
+        }
+    )
+});
 
 app.use('/api/test', (req, res)=> res.json({username:'bryan'}));
 
