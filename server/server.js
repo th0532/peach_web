@@ -81,9 +81,23 @@ app.use('/api/crewdetail:categoryId', (req, res)=> {
         }
     )
 });
+// 카테고리별 지역 데이터
+app.use('/api/crewcategory/categoryAreaName:categoryAreaName', (req, res)=> {
+    const arr = req.params.categoryAreaName.split(":");
+    const category = arr[0];
+    const area = arr[1];
+    
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&&area='"+area+"'";
+    connection.query(query, function(err,rows){
+            res.json({crewdata:rows});
+        }
+    )
+});
+
+
+
 // 댓글 데이터
 app.use('/api/crewdetail/comment:num', (req, res)=> {
-    // params 2개 전달 받는법 추후 공부,,
     let num = req.params.num;
     
     let query = "SELECT * FROM `crew_comment` where postnum = '"+num+"'";

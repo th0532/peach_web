@@ -7,7 +7,7 @@ const MainRoute = (props) => {
     const [crewDataNew, setCrewDataNew] = useState();
     const [crewDataHot, setCrewDataHot] = useState();
     const [isLoading, setisLoadding] = useState()
-    const [isMapLoading, setMapisLoadding] = useState()
+    const [isMapLoading, setMapisLoadding] = useState(false)
     const [isNewLoading, setNewisLoadding] = useState()
     const [isHotLoading, setHotisLoadding] = useState()
 
@@ -17,6 +17,7 @@ const MainRoute = (props) => {
         .get('http://localhost:5000/api/main/map')
         .then(({ data }) => {
             setMapData(data.mapAll);
+            setMapisLoadding(true)
         })
         .catch(e => {  // API 호출이 실패한 경우
         console.error(e);  // 에러표시
@@ -47,8 +48,11 @@ const MainRoute = (props) => {
 
     return (
         <div>
-            <Main path={props.match} mapdata={mapData} listdataNew={crewDataNew} listdatHot={crewDataHot}></Main>
-        </div>
+            {isMapLoading? 
+                <Main path={props.match} mapdata={mapData} listdataNew={crewDataNew} listdatHot={crewDataHot}></Main>
+            :<div>is isLoading...</div>
+        }
+            </div>
     )
 }
 

@@ -6,8 +6,10 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 
 const CrewCard = (props) =>{
-  const [loading , setLoading] = useState(false);
+    const [dataLoading , setLoading] = useState(false);
     let pathNow = props.path.path;
+    // 화면 크기 업데이트 완료시
+    const [isLoading, setisLoadding] = useState()
     
     const [width, setWidth] = useState();
     const [slideCard, setSlideCard] = useState(2);
@@ -23,6 +25,9 @@ const CrewCard = (props) =>{
             setArrowsFlag(true);
             setOffsetValue(0)
             setAnimationSpeedValue(300);
+            setisLoadding(true)
+        }else{
+            setisLoadding(true)
         }
         if( props.listdata !== undefined){
             setLoading(true);
@@ -31,6 +36,8 @@ const CrewCard = (props) =>{
       });
         
     return(
+        <div>
+        {isLoading &&   
         <div className={"crewCard"}>
             <h1 className="category_title">{props.categoryTitle}</h1>
             <Link to={{
@@ -40,7 +47,7 @@ const CrewCard = (props) =>{
             </Link>
             <div className={"crewCard_item_wrap"} >
                 <Carousel slidesPerPage={slideCard} arrows={arrowsFlag} animationSpeed = {animationSpeedValue} offset={offsetValue}>
-                    {loading && props.listdata.map(data=>(
+                    {dataLoading && props.listdata.map(data=>(
                         <CrewCardItem 
                             key={data.num}
                             list_index={data.num}
@@ -57,7 +64,10 @@ const CrewCard = (props) =>{
                     ))}
                 </Carousel>
             </div>
-        </div>      
+        </div>  
+        }     
+        </div>
+          
     )
 }
 const CrewCardItem = (props) =>{

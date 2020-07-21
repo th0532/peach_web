@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./css/crewFind.css";
 import "./css/crewCategory.css";
 import CrewCardList from "./component/crewCardList";
+import axios from "axios";
 
 const Crew = (props) => {
 
@@ -15,12 +16,36 @@ const Crew = (props) => {
 }
 
 const CrewCategory = (props) =>{
+    const [areadata, setAreadata] = useState(props.listdata);
+    
+    const areaChange = (e) =>{
+        const areaName = e.target.value;
+        const category = props.listdata[0].category
+        const categoryAreaName = category+":"+areaName;
+        axios
+        .get('http://localhost:5000/api/crewcategory/categoryAreaName'+categoryAreaName,null,{
+            params: {
+                categoryAreaName,
+            }
+        })
+        .then(({ data }) => {
+            if(data.crewdata.length === 0 ){
+                setAreadata(false);
+            }else{
+                setAreadata(data.crewdata);
+            }
+        })
+        .catch(e => {  // API 호출이 실패한 경우
+        console.error(e);  // 에러표시
+        });
+        
+        }
     return(
         <div className={"crew_category_item"}>
             <div className={"crew_category"}>
             <span>서울시</span>
                     <div className="area2">
-                        <select>
+                        <select onChange={areaChange}>
                             <option>선택</option>
                             <option>강남구</option>
                             <option>강동구</option>
@@ -51,7 +76,12 @@ const CrewCategory = (props) =>{
                     </div>
             </div>
             <div className={"crew_list_wrap"}>
-                <CrewCardList listdata = {props}></CrewCardList> 
+            {areadata
+                ?
+                <CrewCardList listdata = {areadata}></CrewCardList> 
+                :
+                <div>해당 지역에 등록된 데이터가 없습니다.</div>
+            }
             </div>
         </div>
     )
