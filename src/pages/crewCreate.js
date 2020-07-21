@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Range, getTrackBackground } from 'react-range';
+import axios from "axios";
 import "./css/crewCreate.css"
 
 const crewCreate = () => {
@@ -84,21 +85,28 @@ const Recruit = () =>{
                 <h1>인원</h1>
                 제한 없음<input type="checkbox" onClick={() => handleFlag("personnel")}/>
                 {personnelFlag === false && <RangeComponent></RangeComponent>}
-                
             </div>
-            <div className={"metting_date"}>
-                <h1>모임날짜</h1>
-                미정<input type="checkbox" onClick={() => handleFlag("mettingDate")}/>
-                {mettingDateFlag === false && <input type="date" placeholder="연도-월-일"/>}
-            </div>
+            {/*모임날짜 */}         
         </div>
     )
 }
-
+// 모임날짜
+// <div className={"metting_date"}>
+//     <h1>모임날짜</h1>
+//     미정<input type="checkbox" onClick={() => handleFlag("mettingDate")}/>
+//     {mettingDateFlag === false && <input type="date" placeholder="연도-월-일"/>}
+// </div>
 const Writing = () => {
     
     const [file, setFile] = useState('');
     const [previewURL, setPreviewURL] = useState('');
+
+    // const [category, setCategory] = useState();
+    // const [area, setArea] = useState();
+    // const [personnel, setPersonnel] = useState();
+    // const [title, setTitle] = useState();
+    // const [content, setContent] = useState();
+    // const [img, setImg] = useState();
 
     const handleFileOnChange = (e) => {
         e.preventDefault();
@@ -110,6 +118,58 @@ const Writing = () => {
         }
         reader.readAsDataURL(file);
       }
+
+      const dataSubmit = () =>{
+        const categoryValue = document.querySelector(".category select option:checked").text;
+        const areaValue     = document.querySelector(".area select option:checked").text;
+        const personnelValue = document.querySelector("#output").innerHTML;
+        const titleValue = document.querySelector(".writing_title input").value;
+        let contentValue = document.querySelector(".writing_desc textarea").value;
+        const imgValue = "https://cdn.pixabay.com/photo/2020/05/24/16/14/switzerland-5214914__340.jpg";
+        // 현재시간
+        let day = new Date();
+        let y = day.getFullYear();
+        let m = day.getMonth()+1;
+        let d = day.getDate();
+        let h = day.getHours();
+        let i = day.getMinutes();
+
+        let time = y+"-"+m+"-"+d+" "+h+":"+i;
+
+        // textarea enter -> <br />
+        contentValue = contentValue.replace(/(\n|\r\n)/g, '<br>');
+        // 공백 검증 
+        if(categoryValue !== "선택" && areaValue !== "선택" && personnelValue !== undefined && titleValue !== "" && contentValue !== "" && imgValue !== ""){
+          serverSubmit(categoryValue, areaValue, personnelValue, titleValue, contentValue, imgValue, time);
+        }else{
+          alert("값을 모두 입력해주세요")
+        }
+      }
+
+      const serverSubmit = (categoryValue, areaValue, personnelValue, titleValue, contentValue, imgValue, time) =>{
+        
+        axios
+        .post('http://localhost:5000/api/insert/crewcreate',null,{
+            params: {
+              categoryValue,
+              areaValue,
+              personnelValue,
+              titleValue,
+              contentValue,
+              imgValue,
+              time
+            }
+        })
+        .then(() => {
+          alert("글이 등록되었습니다.");
+          window.location.href = "http://localhost:3000/peach_web#/";
+        })
+        .catch(e => {  // API 호출이 실패한 경우
+          alert("글 등록을 실패하였습니다.")
+        });
+      }
+
+
     return(
         <div className={"writing"}>
             <div className={"writing_title"}>
@@ -130,7 +190,7 @@ const Writing = () => {
                 {previewURL === '' ? '' : <img className='profile_preview' src={previewURL} alt="thumbnail"></img> }
             </div>
             <div className={"submit_button"}>
-                <button>등록</button>
+                <button onClick={dataSubmit} >등록</button>
             </div>
         </div>
     )

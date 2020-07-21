@@ -46,7 +46,8 @@ const CrewDetail = (props) => {
         });
         // send to server with e.g. `window.fetch`
       }
-   
+   console.log(data.content)
+   data.content = data.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
     useEffect(()=>{
         setcategory(data.category);
         setNum(data.num);
@@ -63,7 +64,7 @@ const CrewDetail = (props) => {
                     </div>
                     <div className={"crewDetail_content_write"}>
                         <p className={"crewDetail_content_write_title"}>{data.title}</p>
-                        <span className={"crewDetail_content_write_desc"}>{data.content}</span>
+                        <pre className={"crewDetail_content_write_desc"}>{data.content}</pre>
                     </div>
                 </div>
                 <div className={"crewDetail_comment_wrap"}>

@@ -27,7 +27,7 @@ app.use('/api/main/map', (req, res) => {
 // 메인 NEW 데이터 
 app.use('/api/main/crewdata/New', (req, res) => {
     connection.query(
-        'SELECT * FROM `crewdata` order by date desc LIMIT 5',
+        'SELECT * FROM `crewdata` order by num desc LIMIT 5',
         (err, rows, fields) => {
             res.json({crewDataNew:rows});
         }
@@ -36,7 +36,7 @@ app.use('/api/main/crewdata/New', (req, res) => {
 // 추후에 조회수로 바꾸기
 app.use('/api/main/crewdata/Hot', (req, res) => {
     connection.query(
-        'SELECT * FROM `crewdata` order by date asc LIMIT 5',
+        'SELECT * FROM `crewdata` order by num asc LIMIT 5',
         (err, rows, fields) => {
             res.json({crewDataHot:rows});
         }
@@ -47,11 +47,11 @@ app.use('/api/main/crewdata/Hot', (req, res) => {
 // crewFind 페이지 카테고리별 데이터
 app.use('/api/crewfind/crewdata', (req, res)=> {
     const query = 
-    "SELECT * FROM crewdata WHERE category ='Adventure';"+
-    "SELECT * FROM crewdata WHERE category ='Health';"+
-    "SELECT * FROM crewdata WHERE category ='Social';"+
-    "SELECT * FROM crewdata WHERE category ='Tech';"+
-    "SELECT * FROM crewdata WHERE category ='Art';";                 
+    "SELECT * FROM crewdata WHERE category ='Adventure' order by num desc;"+
+    "SELECT * FROM crewdata WHERE category ='Health' order by num desc;"+
+    "SELECT * FROM crewdata WHERE category ='Social' order by num desc;"+
+    "SELECT * FROM crewdata WHERE category ='Tech' order by num desc;"+
+    "SELECT * FROM crewdata WHERE category ='Art' order by num desc;";                 
       connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }
@@ -61,7 +61,7 @@ app.use('/api/crewfind/crewdata', (req, res)=> {
 // crewCategory 카테고리별 페이지
 app.use('/api/crewcategory:category', (req, res)=> {
     let category = req.params.category;
-    let query = "SELECT * FROM crewdata WHERE category ='"+category+"';"
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"' order by num desc;"
     connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }
@@ -87,7 +87,7 @@ app.use('/api/crewcategory/categoryAreaName:categoryAreaName', (req, res)=> {
     const category = arr[0];
     const area = arr[1];
     
-    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&&area='"+area+"'";
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&&area='"+area+"' order by num desc";
     connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }
@@ -110,7 +110,6 @@ app.use('/api/crewdetail/comment:num', (req, res)=> {
 // 댓글 등록
 app.post('/api/insert/crewdetail/comment', (req, res)=> {
    
-    console.log(req.query);
     const num = req.query.num;
     const name = req.query.name;
     const id = req.query.id;
@@ -119,12 +118,35 @@ app.post('/api/insert/crewdetail/comment', (req, res)=> {
     const commentValue = req.query.commentValue;
     const query = "INSERT INTO `crew_comment`(`postnum`, `category`, `id`, `date`, `name`, `content`) VALUES "+ 
                     "("+num+",'"+category+"','"+id+"','"+time+"','"+name+"','"+commentValue+"')";
-    console.log(query);
+
+        connection.query(query, function(err,rows){
+            res.json({comment:rows});
+        }
+    )
+});
+
+
+// 글 작성 (모임만들기)
+app.post('/api/insert/crewcreate', (req, res)=> {
+   
+    const categoryValue = req.query.categoryValue;
+    const areaValue = req.query.areaValue;
+    const personnelValue = req.query.personnelValue;
+    const titleValue = req.query.titleValue;
+    const contentValue = req.query.contentValue;
+    const imgValue = req.query.imgValue;
+    const time = req.query.time;
+
+    const query = "INSERT INTO `crewdata`(`num`, `id`, `title`, `content`, `category`, `name`, `date`, `personnel`, `img`, `area`)"+
+                    "VALUES ('','test','"+titleValue+"','"+contentValue+"','"+categoryValue+"','이름TEST','"+time+"','"+personnelValue+"','"+imgValue+"','"+areaValue+"')";
+
     connection.query(query, function(err,rows){
             res.json({comment:rows});
         }
     )
 });
+
+
 
 app.use('/api/test', (req, res)=> res.json({username:'bryan'}));
 
