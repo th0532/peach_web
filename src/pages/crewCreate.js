@@ -101,13 +101,6 @@ const Writing = () => {
     const [file, setFile] = useState('');
     const [previewURL, setPreviewURL] = useState('');
 
-    // const [category, setCategory] = useState();
-    // const [area, setArea] = useState();
-    // const [personnel, setPersonnel] = useState();
-    // const [title, setTitle] = useState();
-    // const [content, setContent] = useState();
-    // const [img, setImg] = useState();
-
     const handleFileOnChange = (e) => {
         e.preventDefault();
         let reader = new FileReader();
@@ -122,7 +115,16 @@ const Writing = () => {
       const dataSubmit = () =>{
         const categoryValue = document.querySelector(".category select option:checked").text;
         const areaValue     = document.querySelector(".area select option:checked").text;
-        const personnelValue = document.querySelector("#output").innerHTML;
+        // 인원 체크 될 시에는 0명으로 으로 서버에 넘기기
+        let personnelInput =  document.querySelector(".personnel input");
+        let personnelFlag = personnelInput.checked;
+        let personnelValue;
+        if(!personnelFlag){
+          personnelValue = document.querySelector("#output").innerHTML;
+        }else{
+          personnelValue = "0";
+        }
+        
         const titleValue = document.querySelector(".writing_title input").value;
         let contentValue = document.querySelector(".writing_desc textarea").value;
         const imgValue = "https://cdn.pixabay.com/photo/2020/05/24/16/14/switzerland-5214914__340.jpg";
@@ -198,11 +200,11 @@ const Writing = () => {
 
 const STEP = 1;
 const MIN = 1;
-const MAX = 50;
+const MAX = 30;
 
 class RangeComponent extends React.Component {
   state = {
-    values: [25]
+    values: [15]
   };
   render() {
     return (

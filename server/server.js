@@ -87,7 +87,11 @@ app.use('/api/crewcategory/categoryAreaName:categoryAreaName', (req, res)=> {
     const category = arr[0];
     const area = arr[1];
     
-    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&&area='"+area+"' order by num desc";
+    
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&& area='"+area+"' order by num desc";
+    if(area === "전체"){
+        query = "SELECT * FROM crewdata WHERE category ='"+category+"' order by num desc";
+    }
     connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }

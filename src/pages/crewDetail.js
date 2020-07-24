@@ -1,4 +1,5 @@
 import React, {useState,useEffect, useCallback} from "react";
+import TextareaAutosize from 'react-autosize-textarea';
 import "./css/crewDetail.css";
 import axios from "axios";
 
@@ -52,7 +53,7 @@ const CrewDetail = (props) => {
         setcategory(data.category);
         setNum(data.num);
     })
-   
+
     return(
         <div className={"crewDetail"}>
             <div className={"crewDetail_wrap"}>
@@ -72,7 +73,8 @@ const CrewDetail = (props) => {
                 </div>
                 <form onSubmit={onFormSubmit}>
                     <div className={"crewDetail_comment_write"}>
-                        <input onChange={onChangeValue} className={"crewDetail_comment_write_input"} name="content" placeholder="댓글을 입력하세요"></input>
+                        <TextareaAutosize onChange={onChangeValue} className={"crewDetail_comment_write_textarea"} name="content" placeholder='댓글을 입력하세요'/>
+                        <button class="comment_submit">등록</button>
                     </div>
                 </form>
             </div>
@@ -87,11 +89,10 @@ const Comment = (props) => {
             props.data.map((data, index)=> (
                 <div className={"crewDetail_comment_data"}>
                     <p className={"crewDetail_comment_data_name"}>{data.name}</p>
-                    <p className={"crewDetail_comment_data_desc"}>{data.content}</p>
+                    <pre className={"crewDetail_comment_data_desc"}>{data.content}</pre>
                 </div>
             ))
         :""}
-        
         </div>
     )
 }

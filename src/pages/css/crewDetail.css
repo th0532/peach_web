@@ -45,17 +45,35 @@
     font-size: 14px;
     margin-bottom: 5px;
 }
-.crewDetail_comment_write_input{
-    width:100%;
+.crewDetail_comment_write_textarea{
+    width:90%;
     border:1px solid #f3f3f3;
     background-color: #f3f3f3;
     height:35px;
     padding:5px 10px;
     color:#535353;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
     box-shadow: 1px 1px 0px 0px rgba(173, 173, 173, 0.75);
     font-size: 16px;
 }
+.comment_submit{
+    position: absolute;
+    height: 35px;
+    width: 6%;
+    border: none;
+    margin-left: 1px;
+    border-radius: 5px;
+    font-weight: 600;
+    outline: none;
+    background-color: #f3f3f3;
+    box-shadow: 1px 1px 0px 0px rgba(173, 173, 173, 0.75);
+    border-radius: 0px 5px 5px 0px;
+    font-size: 14px;
+}
+pre{
+    white-space: pre-wrap; /* pre tag내에 word wrap */
+}
+
 
 @media (max-width: 768px) {
     .crewDetail_wrap {
@@ -79,9 +97,14 @@
         border:none;
         border-top:1px solid #e3e3e3;
     }
-    .crewDetail_comment_write_input{
+    .crewDetail_comment_write_textarea{
         height:40px;
         padding:5px 10px;
+        width:88%;
+    }
+    .comment_submit{
+        width: 12%;
+        height: 40px;
     }
 }
 

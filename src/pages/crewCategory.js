@@ -46,7 +46,7 @@ const CrewCategory = (props) =>{
             <span>서울시</span>
                     <div className="area2">
                         <select onChange={areaChange}>
-                            <option>선택</option>
+                            <option>전체</option>
                             <option>강남구</option>
                             <option>강동구</option>
                             <option>강북구</option>
