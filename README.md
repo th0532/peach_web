@@ -29,9 +29,12 @@
 	react-range
 		$ yarn add react-range
 
+<<<<<<< HEAD
 	react-autosize-textarea
 		$yarn add react-autosize-textarea
 		
+=======
+>>>>>>> ec2d235626d5f0f9ad24101264fe38ab04a1c87b
 	Axios
 		$yarn add axios
 
