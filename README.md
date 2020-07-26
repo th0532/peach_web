@@ -11,7 +11,7 @@
 <https://th0532.github.io/peach_web/>
 
 
-## Project Setting
+## Project Setting 
 	React Create App
 		$ npm install -g create-react-app
 		$ create-react-app peach_web
