@@ -5,13 +5,13 @@
     Node.js, Express
 
 ## Youtube 결과물 미리보기
-<https://www.youtube.com/watch?v=Mt5h76Y5CY4>
+<https://www.youtube.com/watch?v=Mt5h76Y5CY4> 
 
 ## URL 바로가기 (현재 X)
 <https://th0532.github.io/peach_web/>
 
 
-## Project Setting
+## Project Setting 
 	React Create App
 		$ npm install -g create-react-app
 		$ create-react-app peach_web
