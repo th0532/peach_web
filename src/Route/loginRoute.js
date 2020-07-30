@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import Login from "../pages/login";
+// import axios from "axios";
 
-const Login = (props) => {
-    console.log(props)
+const LoginRoute = (props) => {
     return(
         <div>
-            <h1>login</h1>
+            <Login></Login>
         </div>
     )
 }
 
-export default Login;
+export default LoginRoute;

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import CrewCreate from "../pages/crewCreate";
 
-const crewCreateRoute = () => {
+const CrewCreateRoute = () => {
     return(
         <div className={"content"}>
             <CrewCreate></CrewCreate>
@@ -9,4 +9,4 @@ const crewCreateRoute = () => {
     )
 }
 
-export default crewCreateRoute;
+export default CrewCreateRoute;

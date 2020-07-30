@@ -9,7 +9,7 @@ import SignupRoute from './Route/signupRoute';
 import CrewCategoryRoute from './Route/CrewCategoryRoute';
 import CrewFindRoute from './Route/CrewFindRoute';
 import CrewDetailRoute from './Route/CrewDetailRoute';
-import CrewCreateRoute from './Route/crewCreateRoute';
+import CrewCreateRoute from './Route/CrewCreateRoute';
 import ScrollToTop from './Route/ScrollToTop';
 import './App.css';
 
@@ -21,7 +21,7 @@ function App() {
         <ScrollToTop>
           <Header></Header>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ exact path="/" component={MainRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/login/" component={LoginRoute}/>
+          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/login" component={LoginRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/signup" component={SignupRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewcategory" component={CrewCategoryRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewfind" component={CrewFindRoute}/>
