@@ -5,7 +5,8 @@ import Header from './pages/component/header';
 import Footer from './pages/component/footer';
 import MainRoute from './Route/mainRoute';
 import LoginRoute from './Route/loginRoute';
-import SignupRoute from './Route/signupRoute';
+import SignupRoute from './Route/SignupRoute';
+import SigninRoute from './Route/SigninRoute';
 import CrewCategoryRoute from './Route/CrewCategoryRoute';
 import CrewFindRoute from './Route/CrewFindRoute';
 import CrewDetailRoute from './Route/CrewDetailRoute';
@@ -22,6 +23,7 @@ function App() {
           <Header></Header>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ exact path="/" component={MainRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/login" component={LoginRoute}/>
+          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/signin" component={SigninRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/signup" component={SignupRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewcategory" component={CrewCategoryRoute}/>
           <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewfind" component={CrewFindRoute}/>

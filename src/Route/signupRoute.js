@@ -1,11 +1,11 @@
 import React, {useState} from "react";
+import { Link } from 'react-router-dom';
+import Signup from "../pages/signup";
 
-const SignUp = () => {
+const SignupRoute = () => {
     return(
-        <div>
-            <h1>SignUp</h1>
-        </div>
+        <Signup></Signup>
     )
 }
 
-export default SignUp;
+export default SignupRoute;

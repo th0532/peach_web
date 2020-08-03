@@ -150,6 +150,24 @@ app.post('/api/insert/crewcreate', (req, res)=> {
     )
 });
 
+// 글 작성 (모임만들기)
+app.post('/api/insert/signup', (req, res)=> {
+   
+    const name = req.query.name;
+    const id = req.query.id;
+    const pass = req.query.pass;
+    const email = req.query.email;
+    const birthday = req.query.birthday;
+    const time = req.query.time;
+
+    const query = "INSERT INTO `login`(`num`, `date`, `name`, `id`, `pass`, `email`,`birthday`) "+
+                    "VALUES ('','"+time+"','"+name+"','"+id+"','"+pass+"','"+email+"','"+birthday+"')";
+                    
+    connection.query(query, function(err,rows){
+            res.json({comment:rows});
+        }
+    )
+});
 
 
 app.use('/api/test', (req, res)=> res.json({username:'bryan'}));

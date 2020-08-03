@@ -14,7 +14,7 @@ const Login = (props) => {
                     <input className={"email"} type="text" placeholder="Email"></input>
                     <h4>PassWord</h4>
                     <input className={"pass"} type="password" placeholder="password"></input>
-                    <button className={"sign_in"} type="button">Sign in</button>
+                    <button className={"sign_in"} type="button"><Link to="/">Sign in</Link></button>
                     <button className={"sign_up"} type="button"><Link to="/signup">Sign up</Link></button>
                     
                     <FacebookLogin

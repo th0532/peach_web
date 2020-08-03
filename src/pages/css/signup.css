@@ -1,29 +1,28 @@
-.login_wrap{
-    margin: 130px 0px 50px 0px;
+.signup_wrap{
+    margin: 100px 0px 50px 0px;
     min-height: 450px;
 }
-.login_form{
-    height:400px;
+.signup_form{
+    height: 100%;
     margin:0 auto;
     border:1px solid rgb(90, 130, 190);
     border-radius: 25px;
     width: 35%;
     margin: 0 auto;
-    padding: 0px 5%;
+    padding: 2% 5%;
 }
-.login_form, .etc{
+.signup_form{
     margin:0 auto;
 }
-.login_form > h2{
+.signup_form > h2{
     text-align: center;
     margin-bottom: 50px;
-    margin-top:40px;
 }
 
-.login_form > h4{
+.signup_form > h4{
     margin:15px 0px 10px 0px;
 }
-.login_form > input{
+.signup_form > input{
     padding:5px;
     width:100%;
     height:30px;
@@ -31,7 +30,7 @@
     border:1px solid #d3d3d3;
     font-size: 16px;
 }
-.sign_in, .sign_up {
+.sign_up {
     display: inline-block;
     width: 100%;
     height:30px;
@@ -43,37 +42,39 @@
     font-weight: 600;
     outline: none;
 }
+
 button a{
     display:inline-block;
     width: 100%;
     height: 100%;
 }
 .sign_up{
-    background-color: white;
-    color:rgb(90, 130, 190);
+    background-color:rgb(90, 130, 190);
+    color:white;
     margin-top:10px;
 }
-.facebook{
-    margin-top:20px;
+.sign_up a{
+    color:white;
 }
+
 @media (max-width: 1058px) {
-    .login_form{
+    .signup_form{
         width: 50%;
     }
 }
 @media (max-width: 480px) {
-    .login_form{
-        width: 90%;
+    .signup_form{
+        width: 100%;
         border:none;
     }
-	.login_form > h2{
+	.signup_form > h2{
         margin:30px 0px;
         font-size: 20px;
     }
-    .login_form input{
+    .signup_form input{
         padding:15px 10px;
     }
-    .login_form button{
+    .signup_form button{
         height: 35px;
     }
 }
