@@ -38,10 +38,10 @@
     margin-top:30px;
     background-color: rgb(90, 130, 190);
     border:1px solid #dddddd;
-    color:white;
     border-radius: 5px;
     font-weight: 600;
     outline: none;
+    color:white;
 }
 button a{
     display:inline-block;

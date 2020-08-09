@@ -8,8 +8,8 @@ const Header = (props) =>{
     const [naviToggle3, setNaviToggle3] = useState(false);
     const [naviToggle4, setNaviToggle4] = useState(false);
     const [widthFlag, setWidth] = useState(true);
+    const [session_name, setSession_name] = useState(false);
 
-    
     const naviClick = (type) =>{
         if (type === "naviToggle1"){
             setNaviToggle1(true);
@@ -40,7 +40,15 @@ const Header = (props) =>{
             setNaviToggle3(false);
             setNaviToggle4(true);
         }
+        else if (type === "logout"){
+            sessionStorage.clear();
+            window.location.href = "http://localhost:3000/";
+        }
     }
+    useEffect(()=>{
+        setSession_name(window.sessionStorage.getItem('name'))
+    })
+    // const session_name = window.sessionStorage.getItem('name')
 
     return (
         <div className = {"header"}>
@@ -54,7 +62,7 @@ const Header = (props) =>{
                             <li className={naviToggle1&&'navi_click'}><Link to="/" onClick={() => naviClick("naviToggle1")}>Home</Link></li>
                             <li className={naviToggle2&&'navi_click'}><Link to="/crewfind" onClick={() => naviClick("naviToggle2")}>모임탐색</Link></li>
                             <li className={naviToggle3&&'navi_click'}><Link to="/crewcreate" onClick={() => naviClick("naviToggle3")}>모임만들기</Link></li>
-                            <li className={naviToggle4&&'navi_click'}><Link to="/login" onClick={() => naviClick("naviToggle4")}>로그인</Link></li>
+                            <li className={naviToggle4&&'navi_click'}>{session_name?<Link onClick={() => naviClick("logout") }>로그아웃</Link>:<Link to="/login" onClick={() => naviClick("naviToggle4")}>로그인</Link>}</li>
                         </ul>
                     </div>
                 </div>

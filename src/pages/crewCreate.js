@@ -113,6 +113,8 @@ const Writing = () => {
       }
 
       const dataSubmit = () =>{
+        const session_name  = window.sessionStorage.getItem('name');
+        const session_id  = window.sessionStorage.getItem('id');
         const categoryValue = document.querySelector(".category select option:checked").text;
         const areaValue     = document.querySelector(".area select option:checked").text;
         // 인원 체크 될 시에는 0명으로 으로 서버에 넘기기
@@ -141,18 +143,20 @@ const Writing = () => {
         // textarea enter -> <br />
         contentValue = contentValue.replace(/(\n|\r\n)/g, '<br>');
         // 공백 검증 
-        if(categoryValue !== "선택" && areaValue !== "선택" && personnelValue !== undefined && titleValue !== "" && contentValue !== "" && imgValue !== ""){
-          serverSubmit(categoryValue, areaValue, personnelValue, titleValue, contentValue, imgValue, time);
+        if(session_name !== null && session_id !==null && categoryValue !== "선택" && areaValue !== "선택" && personnelValue !== undefined && titleValue !== "" && contentValue !== "" && imgValue !== ""){
+          serverSubmit(session_name, session_id, categoryValue, areaValue, personnelValue, titleValue, contentValue, imgValue, time);
         }else{
           alert("값을 모두 입력해주세요")
         }
       }
 
-      const serverSubmit = (categoryValue, areaValue, personnelValue, titleValue, contentValue, imgValue, time) =>{
+      const serverSubmit = (session_name, session_id, categoryValue, areaValue, personnelValue, titleValue, contentValue, imgValue, time) =>{
         
         axios
         .post('http://localhost:5000/api/insert/crewcreate',null,{
             params: {
+              session_name,
+              session_id,
               categoryValue,
               areaValue,
               personnelValue,
@@ -164,7 +168,7 @@ const Writing = () => {
         })
         .then(() => {
           alert("글이 등록되었습니다.");
-          window.location.href = "http://localhost:3000/peach_web#/";
+          window.location.href = "http://localhost:3000/#/";
         })
         .catch(e => {  // API 호출이 실패한 경우
           alert("글 등록을 실패하였습니다.")

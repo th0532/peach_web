@@ -6,12 +6,13 @@ import axios from "axios";
 const CrewDetail = (props) => {
     const data = props.listdata[0];
     const [commentValue, setCommentValue] = useState()
-    const [name, setName] = useState("test")
-    const [id, setId] = useState("test")
     const [category, setcategory] = useState()
     const [num, setNum] = useState()
     const [a, setA] = useState()
    
+    const session_name  = window.sessionStorage.getItem('name');
+    const session_id  = window.sessionStorage.getItem('id');
+    
     let day = new Date();
     let y = day.getFullYear();
     let m = day.getMonth()+1;
@@ -31,11 +32,12 @@ const CrewDetail = (props) => {
         .post('http://localhost:5000/api/insert/crewdetail/comment',null,{
             params: {
                 num,
-                id,
-                name,
+                session_id,
+                session_name,
                 category,
                 time,
                 commentValue,
+                
               }
         })
         .then(() => {

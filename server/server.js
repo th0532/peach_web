@@ -115,13 +115,13 @@ app.use('/api/crewdetail/comment:num', (req, res)=> {
 app.post('/api/insert/crewdetail/comment', (req, res)=> {
    
     const num = req.query.num;
-    const name = req.query.name;
-    const id = req.query.id;
+    const session_name = req.query.session_name;
+    const session_id = req.query.session_id;
     const category = req.query.category;
     const time = req.query.time;
     const commentValue = req.query.commentValue;
     const query = "INSERT INTO `crew_comment`(`postnum`, `category`, `id`, `date`, `name`, `content`) VALUES "+ 
-                    "("+num+",'"+category+"','"+id+"','"+time+"','"+name+"','"+commentValue+"')";
+                    "("+num+",'"+category+"','"+session_id+"','"+time+"','"+session_name+"','"+commentValue+"')";
 
         connection.query(query, function(err,rows){
             res.json({comment:rows});
@@ -133,6 +133,8 @@ app.post('/api/insert/crewdetail/comment', (req, res)=> {
 // 글 작성 (모임만들기)
 app.post('/api/insert/crewcreate', (req, res)=> {
    
+    const session_name = req.query.session_name;
+    const session_id = req.query.session_id;
     const categoryValue = req.query.categoryValue;
     const areaValue = req.query.areaValue;
     const personnelValue = req.query.personnelValue;
@@ -142,15 +144,15 @@ app.post('/api/insert/crewcreate', (req, res)=> {
     const time = req.query.time;
 
     const query = "INSERT INTO `crewdata`(`num`, `id`, `title`, `content`, `category`, `name`, `date`, `personnel`, `img`, `area`)"+
-                    "VALUES ('','test','"+titleValue+"','"+contentValue+"','"+categoryValue+"','이름TEST','"+time+"','"+personnelValue+"','"+imgValue+"','"+areaValue+"')";
+                    "VALUES ('','"+session_id+"','"+titleValue+"','"+contentValue+"','"+categoryValue+"','"+session_name+"','"+time+"','"+personnelValue+"','"+imgValue+"','"+areaValue+"')";
 
     connection.query(query, function(err,rows){
-            res.json({comment:rows});
+            res.json({crewcreate:rows});
         }
     )
 });
 
-// 글 작성 (모임만들기)
+// 회원가입
 app.post('/api/insert/signup', (req, res)=> {
    
     const name = req.query.name;
@@ -164,11 +166,24 @@ app.post('/api/insert/signup', (req, res)=> {
                     "VALUES ('','"+time+"','"+name+"','"+id+"','"+pass+"','"+email+"','"+birthday+"')";
                     
     connection.query(query, function(err,rows){
-            res.json({comment:rows});
+            res.json({signup:rows});
         }
     )
 });
 
+// 로그인
+app.post('/api/login', (req, res)=> {
+   
+    const id = req.query.id;
+    const pass = req.query.pass;
+
+    const query = "select * from login where id = '"+id+"' and pass ='"+pass+"'";
+                    
+    connection.query(query, function(err,rows){
+            res.json({login:rows});
+        }
+    )
+});
 
 app.use('/api/test', (req, res)=> res.json({username:'bryan'}));
 

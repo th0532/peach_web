@@ -52,7 +52,6 @@ function NaverMapAPI(props) {
   }
 
 const MapListDivision = (props) => {
-    console.log(props.mapdata)
     const [displayOnOff, setdisplayFlag] = useState(false);
     const [mapSelected, setMapSelected] = useState("map_selected");
     const [listSelected, setListSelected] = useState("list_notSelected");
