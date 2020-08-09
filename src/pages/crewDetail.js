@@ -9,7 +9,6 @@ const CrewDetail = (props) => {
     const [category, setcategory] = useState()
     const [num, setNum] = useState()
     const [a, setA] = useState()
-   
     const session_name  = window.sessionStorage.getItem('name');
     const session_id  = window.sessionStorage.getItem('id');
     
@@ -49,12 +48,13 @@ const CrewDetail = (props) => {
         });
         // send to server with e.g. `window.fetch`
       }
-   console.log(data.content)
    data.content = data.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
     useEffect(()=>{
         setcategory(data.category);
         setNum(data.num);
     })
+
+   
 
     return(
         <div className={"crewDetail"}>
@@ -71,7 +71,7 @@ const CrewDetail = (props) => {
                     </div>
                 </div>
                 <div className={"crewDetail_comment_wrap"}>
-                    <Comment data={props.comment}></Comment>
+                    <Comment data={props.comment} session_id={session_id}></Comment>
                 </div>
                 <form onSubmit={onFormSubmit}>
                     <div className={"crewDetail_comment_write"}>
@@ -85,11 +85,43 @@ const CrewDetail = (props) => {
 }
 
 const Comment = (props) => {
+    const etcComment = (sessionCheck) =>{
+        if(sessionCheck.id === props.session_id){
+            deleteComment(sessionCheck)
+        }else{
+            alert("권한이 없습니다");
+        }
+    }
+
+    const deleteComment = (sessionCheck) =>{
+        const num = sessionCheck.num;
+        const session_id = props.session_id;
+        
+        let result = window.confirm("삭제하시겠습니까?");
+        
+        if(result){
+            axios
+            .post('http://localhost:5000/api/delete/crewdetail/comment',null,{
+                params: {
+                    num,
+                    session_id,
+                }
+            })
+            .then(() => {
+                // 효율적이지 않음,,, rerender할 수 있는방법 2시간째 못찾음 ㅠㅠㅠ
+                window.location.reload();
+            })
+            .catch(e => {  // API 호출이 실패한 경우
+
+            });
+        }
+    }
     return(
         <div className={"crewDetail_comment"}>
         {props.data?
             props.data.map((data, index)=> (
-                <div className={"crewDetail_comment_data"}>
+                <div key ={index} className={"crewDetail_comment_data"}>
+                    <button className={"etc_comment"} onClick={() =>etcComment(data)}>X</button>
                     <p className={"crewDetail_comment_data_name"}>{data.name}</p>
                     <pre className={"crewDetail_comment_data_desc"}>{data.content}</pre>
                 </div>

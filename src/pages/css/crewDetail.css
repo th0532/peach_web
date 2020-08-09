@@ -73,7 +73,15 @@
 pre{
     white-space: pre-wrap; /* pre tag내에 word wrap */
 }
-
+.etc_comment{
+    float: right;
+    width:30px;
+    height: 25px;
+    background-color: white;
+    border-color: white;
+    box-shadow: 1px 1px 0px 0px rgba(214, 214, 214, 0.75);
+    font-weight: 600;
+}
 
 @media (max-width: 768px) {
     .crewDetail_wrap {

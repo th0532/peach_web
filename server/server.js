@@ -129,6 +129,18 @@ app.post('/api/insert/crewdetail/comment', (req, res)=> {
     )
 });
 
+// 댓글삭제
+app.post('/api/delete/crewdetail/comment', (req, res)=> {
+   
+    const num = req.query.num;
+    const session_id = req.query.session_id;
+    const query = "DELETE FROM `crew_comment` WHERE num = "+num+" AND id ='"+session_id+"'";
+        connection.query(query, function(err,rows){
+            res.json({comment:rows});
+        }
+    )
+});
+
 
 // 글 작성 (모임만들기)
 app.post('/api/insert/crewcreate', (req, res)=> {
