@@ -164,6 +164,27 @@ app.post('/api/insert/crewcreate', (req, res)=> {
     )
 });
 
+// 회원가입 중복체크 ID
+app.post('/api/signup/check/id', (req, res)=> {
+    const id = req.query.id;
+    let query = "SELECT * FROM `login` WHERE id = '"+id+"'";
+    connection.query(query, function(err,rows){
+            res.json({id:rows});
+        }
+    )
+});
+//email
+app.post('/api/signup/check/email', (req, res)=> {
+    const email = req.query.email;
+    let query = "SELECT * FROM `login` WHERE email = '"+email+"'";
+    console.log(query);
+
+    connection.query(query, function(err,rows){
+            res.json({email:rows});
+        }
+    )
+});
+
 // 회원가입
 app.post('/api/insert/signup', (req, res)=> {
    

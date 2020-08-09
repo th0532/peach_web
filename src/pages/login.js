@@ -28,7 +28,7 @@ const Login = (props) => {
       }
 
     const enterKey = () => {
-        if(window.event.keyCode == 13){
+        if(window.event.keyCode === 13){
             LoginSubmit();
         }
     }

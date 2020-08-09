@@ -56,10 +56,23 @@ button a{
 .sign_up a{
     color:white;
 }
-
+.idCheck{
+    position: absolute;
+    right:37.5%;
+    height: 30px;
+    border-radius: 5px;
+    border:1px solid #e3e3e3;
+    background-color: rgb(130, 162, 209);
+    color:white;
+    font-weight: 600;
+    outline: none;
+}
 @media (max-width: 1058px) {
     .signup_form{
         width: 50%;
+    }
+    .idCheck{
+        right:30%;
     }
 }
 @media (max-width: 480px) {
@@ -74,7 +87,11 @@ button a{
     .signup_form input{
         padding:15px 10px;
     }
-    .signup_form button{
+    .signup_form .sign_up{
         height: 35px;
+    }
+    .idCheck{
+        right:5%;
+        height: 32px;
     }
 }
