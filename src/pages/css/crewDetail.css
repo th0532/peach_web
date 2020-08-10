@@ -27,15 +27,20 @@
     margin-bottom: 20px;
 }
 .crewDetail_content_info_name{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .crewDetail_content_info_declaration{
     float:right;
 }
+.crewDetail_content_info_personnel{
+    margin-left: 10px;
+}
 .crewDetail_content_write_title{
     font-size: 22px;
 }
-
+.crewDetail_content_write_desc{
+    font-size: 18px;
+}
 .crewDetail_comment_data{
     border: 1px solid #e3e3e3;
     padding:15px;
@@ -99,7 +104,10 @@ pre{
         min-height: 355px;
     }
     .crewDetail_content_write_title{
-        font-size: 18px;
+        font-size: 19px;
+    }
+    .crewDetail_content_write_desc{
+        font-size: 17px;
     }
     .crewDetail_comment_data{
         border:none;

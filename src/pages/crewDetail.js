@@ -4,14 +4,14 @@ import "./css/crewDetail.css";
 import axios from "axios";
 
 const CrewDetail = (props) => {
+    
     const data = props.listdata[0];
     const [commentValue, setCommentValue] = useState()
     const [category, setcategory] = useState()
     const [num, setNum] = useState()
-    const [a, setA] = useState()
     const session_name  = window.sessionStorage.getItem('name');
     const session_id  = window.sessionStorage.getItem('id');
-    
+
     let day = new Date();
     let y = day.getFullYear();
     let m = day.getMonth()+1;
@@ -27,34 +27,40 @@ const CrewDetail = (props) => {
     
     const onFormSubmit = e => {
         e.preventDefault();
-        axios
-        .post('http://localhost:5000/api/insert/crewdetail/comment',null,{
-            params: {
-                num,
-                session_id,
-                session_name,
-                category,
-                time,
-                commentValue,
-                
-              }
-        })
-        .then(() => {
-            // 효율적이지 않음,,, rerender할 수 있는방법 2시간째 못찾음 ㅠㅠㅠ
-            window.location.reload();
-        })
-        .catch(e => {  // API 호출이 실패한 경우
-
-        });
-        // send to server with e.g. `window.fetch`
+        if(session_id){
+            if(commentValue){
+                axios
+                .post('http://localhost:5000/api/insert/crewdetail/comment',null,{
+                    params: {
+                        num,
+                        session_id,
+                        session_name,
+                        category,
+                        time,
+                        commentValue,
+                    }
+                })
+                .then(() => {
+                    // 효율적이지 않음,,, rerender할 수 있는방법 2시간째 못찾음 ㅠㅠㅠ
+                    window.location.reload();
+                })
+                .catch(e => {  // API 호출이 실패한 경우
+        
+                });
+            }else{
+                alert("내용을 입력해주세요.");
+            }
+        }
+        else{
+            alert("로그인을 해주세요");
+            window.location.href = "http://localhost:3000/#/login";
+        }
       }
    data.content = data.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
     useEffect(()=>{
         setcategory(data.category);
         setNum(data.num);
     })
-
-   
 
     return(
         <div className={"crewDetail"}>
@@ -63,7 +69,8 @@ const CrewDetail = (props) => {
                     <div className={"crewDetail_content_info"}>
                         <p className={"crewDetail_content_info_name"}>{data.name}</p>
                         <span className={"crewDetail_content_info_date"}>{data.date.slice(0,10)}</span>
-                        <p className={"crewDetail_content_info_declaration"}>신고</p>
+                        {/*<p className={"crewDetail_content_info_declaration"}>신고</p>*/}
+                        <span className={"crewDetail_content_info_personnel"}>모집인원 : {data.personnel}</span>
                     </div>
                     <div className={"crewDetail_content_write"}>
                         <p className={"crewDetail_content_write_title"}>{data.title}</p>
