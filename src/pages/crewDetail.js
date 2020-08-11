@@ -9,6 +9,9 @@ const CrewDetail = (props) => {
     const [commentValue, setCommentValue] = useState()
     const [category, setcategory] = useState()
     const [num, setNum] = useState()
+// 현재 사용자와 게시글 작성자 비교
+    const [userState, setUserState] = useState(false)
+
     const session_name  = window.sessionStorage.getItem('name');
     const session_id  = window.sessionStorage.getItem('id');
 
@@ -60,18 +63,46 @@ const CrewDetail = (props) => {
     useEffect(()=>{
         setcategory(data.category);
         setNum(data.num);
+        if(props.listdata[0].id === session_id){
+            setUserState(true);
+        }
     })
+
+    const pathId = props.pathId;
+    const deletePost = () =>{
+        const result = window.confirm("삭제하시겠습니까?");
+        if(result){
+            axios
+            .post('http://localhost:5000/api/delete/crewdetail', null,{
+                params: {
+                    pathId,
+                  }
+            })
+            .then(() => {
+                alert("게시글이 삭제 되었습니다.");
+                window.location.href = "http://localhost:3000/#/"
+            })
+            .catch(e => {  // API 호출이 실패한 경우
+                console.error(e);  // 에러표시
+            });
+        }
+    }
 
     return(
         <div className={"crewDetail"}>
             <div className={"crewDetail_wrap"}>
                 <div className={"crewDetail_content"}>
+                    {userState&&
+                        <div className={"crewDetail_delete"}>
+                        <button onClick = {deletePost}>삭제</button>
+                    </div>}
                     <div className={"crewDetail_content_info"}>
                         <p className={"crewDetail_content_info_name"}>{data.name}</p>
                         <span className={"crewDetail_content_info_date"}>{data.date.slice(0,10)}</span>
                         {/*<p className={"crewDetail_content_info_declaration"}>신고</p>*/}
                         <span className={"crewDetail_content_info_personnel"}>모집인원 : {data.personnel}</span>
                     </div>
+                    
                     <div className={"crewDetail_content_write"}>
                         <p className={"crewDetail_content_write_title"}>{data.title}</p>
                         <pre className={"crewDetail_content_write_desc"}>{data.content}</pre>

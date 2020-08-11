@@ -81,6 +81,18 @@ app.use('/api/crewdetail:categoryId', (req, res)=> {
         }
     )
 });
+
+app.use('/api/delete/crewdetail', (req, res)=> {
+    let pathId = req.query.pathId;
+    
+    let query = "DELETE FROM `crewdata` WHERE num = "+pathId;
+    connection.query(query, function(err,rows){
+            res.json({crewdata:rows});
+        }
+    )
+});
+
+
 // 카테고리별 지역 데이터
 app.use('/api/crewcategory/categoryAreaName:categoryAreaName', (req, res)=> {
     const arr = req.params.categoryAreaName.split(":");
@@ -177,7 +189,6 @@ app.post('/api/signup/check/id', (req, res)=> {
 app.post('/api/signup/check/email', (req, res)=> {
     const email = req.query.email;
     let query = "SELECT * FROM `login` WHERE email = '"+email+"'";
-    console.log(query);
 
     connection.query(query, function(err,rows){
             res.json({email:rows});

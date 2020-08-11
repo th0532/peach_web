@@ -43,7 +43,7 @@ const CrewDetailRoute = (props) => {
     return(
         <div className={"content"}>
             {isLoading&&
-                <CrewDetail path={props.match} listdata={crewData} comment={comment}></CrewDetail>
+                <CrewDetail path={props.match} pathId={path_id} listdata={crewData} comment={comment}></CrewDetail>
             }
         </div>
     )
