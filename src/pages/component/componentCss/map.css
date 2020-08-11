@@ -67,8 +67,8 @@
     height: 30px;
 }
 .map_table ul li{
-    border-bottom: none;
-    border-right: none;
+    /* border-bottom: none;
+    border-right: none; */
 }
 .map_table ul li:nth-child(4n){
     border-right: 1px solid #cccccc;

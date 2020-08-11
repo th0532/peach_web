@@ -91,9 +91,12 @@ const MapListDivision = (props) => {
                     {props.mapdata.map((data, index)=>(
                         <li key={index} onClick={()=>areaNameChange(data.area, data.count)}>{data.area}</li>  
                     ))}
+                    {/*
                         <li></li>
                         <li></li>
                         <li></li>
+                    */}
+
                     </ul>
                 </div>
                 <div className={"map_info"}>
