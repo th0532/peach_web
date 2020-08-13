@@ -68,8 +68,8 @@ const CrewDetail = (props) => {
         }
     })
 
-    const pathId = props.pathId;
     const deletePost = () =>{
+        const pathId = props.pathId;
         const result = window.confirm("삭제하시겠습니까?");
         if(result){
             axios

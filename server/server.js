@@ -61,7 +61,7 @@ app.use('/api/crewfind/crewdata', (req, res)=> {
 // crewCategory 카테고리별 페이지
 app.use('/api/crewcategory:category', (req, res)=> {
     let category = req.params.category;
-    let query = "SELECT * FROM crewdata WHERE category ='"+category+"' order by num desc;"
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"' order by num desc LIMIT 6;"
     connection.query(query, function(err,rows){
             res.json({crewdata:rows});
         }
@@ -82,6 +82,7 @@ app.use('/api/crewdetail:categoryId', (req, res)=> {
     )
 });
 
+// 게시글 삭제
 app.use('/api/delete/crewdetail', (req, res)=> {
     let pathId = req.query.pathId;
     
@@ -91,6 +92,19 @@ app.use('/api/delete/crewdetail', (req, res)=> {
         }
     )
 });
+app.use('/api/crewcategory/pagination', (req, res)=> {
+    const arr = req.query;
+    let page = req.query.catepage;
+    let limit = req.query.limit;
+    const category = req.query.category;
+    page = limit * (page - 1);
+    let query = "SELECT * FROM crewdata where category ='"+category+"' order by num desc LIMIT "+limit+" OFFSET "+page+"";
+    connection.query(query, function(err,rows){
+            res.json({payload:rows});
+        }
+    )
+});
+
 
 
 // 카테고리별 지역 데이터

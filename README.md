@@ -40,3 +40,7 @@
 		
 	Mysql
 		$yarn add mysql-plus
+
+	Pagination
+		$yarn add reactjs-hooks-pagination
+
