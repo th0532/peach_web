@@ -53,13 +53,12 @@ const Header = (props) =>{
     useEffect(()=>{
         setSession_name(window.sessionStorage.getItem('name'))
     })
-    // const session_name = window.sessionStorage.getItem('name')
 
     return (
         <div className = {"header"}>
             <div className = {"top"}>
                 <div className = {"logo"}>
-                    {widthFlag ? <Link to="/" onClick={() => naviClick("naviToggle1")}>Peach</Link>:<Link>Peach</Link>}
+                    {widthFlag ? <Link to="/" onClick={() => naviClick("naviToggle1")}>People</Link>:<Link>People</Link>}
                 </div>
                 <div className = {"navigation"}>
                     <div className={"pc_navigation"}>

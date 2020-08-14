@@ -44,7 +44,6 @@ const CrewDetail = (props) => {
                     }
                 })
                 .then(() => {
-                    // 효율적이지 않음,,, rerender할 수 있는방법 2시간째 못찾음 ㅠㅠㅠ
                     window.location.reload();
                 })
                 .catch(e => {  // API 호출이 실패한 경우
@@ -139,7 +138,7 @@ const Comment = (props) => {
         
         if(result){
             axios
-            .post('http://localhost:5000/api/delete/crewdetail/comment',null,{
+            .post('http://localhost:5000/api/delete/comment/crewdetail/',null,{
                 params: {
                     num,
                     session_id,
@@ -150,7 +149,6 @@ const Comment = (props) => {
                 window.location.reload();
             })
             .catch(e => {  // API 호출이 실패한 경우
-
             });
         }
     }

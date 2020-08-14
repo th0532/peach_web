@@ -74,6 +74,7 @@
 @media (max-width: 768px) {
 	.pagination_wrap {
         margin:50px 0px;
+        width:100%;
     }
 }
 
@@ -86,5 +87,4 @@
     .crew_category span, .crew_category .area2{
         width:30%;
     }
-    
 }

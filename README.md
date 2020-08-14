@@ -36,7 +36,7 @@
 		$yarn add axios
 
 	Cros
-		$yarn install cros
+		$npm install cros
 		
 	Mysql
 		$yarn add mysql-plus

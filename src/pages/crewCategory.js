@@ -5,7 +5,7 @@ import CrewCardList from "./component/crewCardList";
 import axios from "axios";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Pagination from 'reactjs-hooks-pagination';
-const pageLimit = 6;
+const pageLimit = 1;
 const initialState = {  
   user: {},  
   loading: true,  
@@ -71,7 +71,6 @@ const CrewCategory = (props) =>{
         axios.get('http://localhost:5000/api/crewcategory/selectAreaName?category='+category)  
         .then(response => {  
             setSelectAreaName(response.data.selectAreaName)
-
         })  
         .catch(e => {  
             console.error(e);  // 에러표시

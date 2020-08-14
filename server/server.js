@@ -9,6 +9,9 @@ var mysql_dbc = require('./config/db_con')();
 var connection = mysql_dbc.init();
 mysql_dbc.test_open(connection);
 
+// password 암호화
+const crypto = require('crypto');
+
 app.use(cors()); 
 app.use(bodyParser.json());
 // 맵 데이터
@@ -70,6 +73,7 @@ app.use('/api/crewcategory:category', (req, res)=> {
 
 app.use('/api/crewdetail:categoryId', (req, res)=> {
     // params 2개 전달 받는법 추후 공부,,
+    // 파라미터를 통해 req.query로 하면됨
     let arr = req.params.categoryId.split(":");
     let category = arr[0];
     let id = arr[1];
@@ -171,7 +175,6 @@ app.post('/api/insert/crewdetail/comment', (req, res)=> {
     const commentValue = req.query.commentValue;
     const query = "INSERT INTO `crew_comment`(`postnum`, `category`, `id`, `date`, `name`, `content`) VALUES "+ 
                     "("+num+",'"+category+"','"+session_id+"','"+time+"','"+session_name+"','"+commentValue+"')";
-
         connection.query(query, function(err,rows){
             res.json({comment:rows});
         }
@@ -179,11 +182,12 @@ app.post('/api/insert/crewdetail/comment', (req, res)=> {
 });
 
 // 댓글삭제
-app.post('/api/delete/crewdetail/comment', (req, res)=> {
+app.post('/api/delete/comment/crewdetail/', (req, res)=> {
    
     const num = req.query.num;
     const session_id = req.query.session_id;
     const query = "DELETE FROM `crew_comment` WHERE num = "+num+" AND id ='"+session_id+"'";
+
         connection.query(query, function(err,rows){
             res.json({comment:rows});
         }
@@ -243,13 +247,16 @@ app.post('/api/insert/signup', (req, res)=> {
     const birthday = req.query.birthday;
     const time = req.query.time;
 
-    const query = "INSERT INTO `login`(`num`, `date`, `name`, `id`, `pass`, `email`,`birthday`) "+
-                    "VALUES ('','"+time+"','"+name+"','"+id+"','"+pass+"','"+email+"','"+birthday+"')";
-                    
-    connection.query(query, function(err,rows){
-            res.json({signup:rows});
-        }
-    )
+    crypto.pbkdf2(pass, 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
+        if (err) throw err;
+        console.log(derivedKey.toString('hex'));
+        const query = "INSERT INTO `login`(`num`, `date`, `name`, `id`, `pass`, `email`,`birthday`) "+
+                    "VALUES ('','"+time+"','"+name+"','"+id+"','"+derivedKey.toString('hex')+"','"+email+"','"+birthday+"')";
+                    connection.query(query, function(err,rows){
+                        res.json({signup:rows});
+                    }
+                )
+      });
 });
 
 // 로그인
@@ -257,13 +264,14 @@ app.post('/api/login', (req, res)=> {
    
     const id = req.query.id;
     const pass = req.query.pass;
-
-    const query = "select * from login where id = '"+id+"' and pass ='"+pass+"'";
-                    
-    connection.query(query, function(err,rows){
+    crypto.pbkdf2(pass, 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
+        if (err) throw err;
+        const query = "select * from login where id = '"+id+"' and pass ='"+derivedKey.toString('hex')+"'";
+        connection.query(query, function(err,rows){
             res.json({login:rows});
-        }
-    )
+        })
+    });
+    
 });
 
 app.use('/api/test', (req, res)=> res.json({username:'bryan'}));
