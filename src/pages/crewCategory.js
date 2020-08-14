@@ -3,7 +3,7 @@ import "./css/crewFind.css";
 import "./css/crewCategory.css";
 import CrewCardList from "./component/crewCardList";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Pagination from 'reactjs-hooks-pagination';
 const pageLimit = 6;
 const initialState = {  
@@ -111,7 +111,9 @@ const CrewCategory = (props) =>{
                 console.error(e);  // 에러표시
             });
         }
-
+        const asd = () =>{
+            alert("sad");
+        }
     return(
         <div className={"crew_category_item"}>
             <div className={"crew_category"}>
@@ -134,8 +136,8 @@ const CrewCategory = (props) =>{
                 <div>해당 지역에 등록된 데이터가 없습니다.</div>
             }
             </div>
-            <div className="container mb-5" style ={{marginTop:"150px"}}>
-                <div className="d-flex flex-row py-4 justify-content-end">
+            <div className="pagination_wrap">
+                <div className="pagination">
                     <Pagination
                     totalRecords={totalRecords}
                     pageLimit={pageLimit}
@@ -148,30 +150,3 @@ const CrewCategory = (props) =>{
     )
 }
 export default Crew;
-
-// <option>전체</option>
-//                                 <option>강남구</option>
-//                                 <option>강동구</option>
-//                                 <option>강북구</option>
-//                                 <option>강서구</option>
-//                                 <option>관악구</option>
-//                                 <option>광진구</option>
-//                                 <option>구로구</option>
-//                                 <option>금천구</option>
-//                                 <option>노원구</option>
-//                                 <option>도봉구</option>
-//                                 <option>동대문구</option>
-//                                 <option>동작구</option>
-//                                 <option>마포구</option>
-//                                 <option>서대문구</option>
-//                                 <option>서초구</option>
-//                                 <option>성동구</option>
-//                                 <option>성북구</option>
-//                                 <option>송파구</option>
-//                                 <option>양천구</option>
-//                                 <option>영등포구</option>
-//                                 <option>용산구</option>
-//                                 <option>은평구</option>
-//                                 <option>종로구</option>
-//                                 <option>중구</option>
-//                                 <option>중랑구</option>

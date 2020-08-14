@@ -29,6 +29,39 @@
     outline: none;
     background-color: white;
 }
+.pagination_wrap{
+    width:80%;
+    margin:auto;
+    margin-top:50px
+}
+
+.pagination {
+    display: flex;
+  }
+.pagination nav {
+    margin:0 auto;
+}  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+
+.active {
+    z-index: 3;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.active a{
+    color:rgb(236, 236, 236);
+}
+
+.pagination a:hover:not(.active) {background-color: #007bff;}
+
 @media (max-width: 1024px) {
 	.crew_category span{
         width: 25%;
@@ -38,6 +71,12 @@
         width: 25%;
     }
 }
+@media (max-width: 768px) {
+	.pagination_wrap {
+        margin:50px 0px;
+    }
+}
+
 
 @media (max-width: 478px) {
 	.crew_category span, .crew_category .area2 select{
