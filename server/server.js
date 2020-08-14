@@ -120,7 +120,16 @@ app.use('/api/crewcategory/count', (req, res)=> {
     )
 });
 
-
+//데이터 존재하는 지역명만 가져오기
+app.use('/api/crewcategory/selectAreaName', (req, res)=> {
+    let category = req.query.category
+    let query = "select DISTINCT area from crewdata where category = '"+category+"' order by area ASC";
+    
+    connection.query(query, function(err,rows){
+            res.json({selectAreaName:rows});
+        }
+    )
+});
 
 // 카테고리별 지역 데이터
 app.use('/api/crewcategory/', (req, res)=> {
