@@ -92,8 +92,8 @@ app.use('/api/delete/crewdetail', (req, res)=> {
         }
     )
 });
+// 페이징 처리
 app.use('/api/crewcategory/pagination', (req, res)=> {
-    const arr = req.query;
     let page = req.query.catepage;
     let limit = req.query.limit;
     const category = req.query.category;
@@ -105,18 +105,32 @@ app.use('/api/crewcategory/pagination', (req, res)=> {
     )
 });
 
+// 페이징 count
+app.use('/api/crewcategory/count', (req, res)=> {
+    let category = req.query.category;
+    let areaName = req.query.areaName    
+
+    let query = "SELECT COUNT(num) as count from crewdata WHERE category = '"+category+"' AND area ='"+areaName+"'";
+    if(areaName === "전체"){
+        query = "SELECT COUNT(num) as count from crewdata WHERE category = '"+category+"'";
+    }
+    connection.query(query, function(err,rows){
+            res.json({count:rows});
+        }
+    )
+});
+
 
 
 // 카테고리별 지역 데이터
-app.use('/api/crewcategory/categoryAreaName:categoryAreaName', (req, res)=> {
-    const arr = req.params.categoryAreaName.split(":");
-    const category = arr[0];
-    const area = arr[1];
-    
-    
-    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&& area='"+area+"' order by num desc";
-    if(area === "전체"){
-        query = "SELECT * FROM crewdata WHERE category ='"+category+"' order by num desc";
+app.use('/api/crewcategory/', (req, res)=> {
+    let category = req.query.category
+    let areaname = req.query.areaname    
+    let limit = req.query.limit;
+
+    let query = "SELECT * FROM crewdata WHERE category ='"+category+"'&& area='"+areaname+"' order by num desc Limit "+limit;
+    if(areaname === "전체"){
+        query = "SELECT * FROM crewdata WHERE category ='"+category+"' order by num desc Limit "+limit;
     }
     connection.query(query, function(err,rows){
             res.json({crewdata:rows});

@@ -48,7 +48,7 @@ const CrewCategory = (props) =>{
 
     const [state, dispatch] = useReducer(Reducer, initialState);
     const [offset, setOffset] = useState(0);
-    const [totalRecords, setTotalRecords] = useState(20);
+    const [totalRecords, setTotalRecords] = useState();
     const [currentPage,setCurrentPage] = useState(1);
     const category = props.listdata[0].category;
     
@@ -57,36 +57,43 @@ const CrewCategory = (props) =>{
         .then(response => {  
             dispatch({ type: 'OnSuccess', payload: response.data })
             setAreadata(response.data.payload);
+            countData()
         })  
-        .catch(error => {  
-            dispatch({ type: 'OnFailure' })  
+        .catch(e => {  
+            console.error(e);  // 에러표시
         })  
-     
       }, [currentPage]);
        const {loading,user,error}  =state;
 
+        const countData = () => {
+            const category = props.listdata[0].category
+            const areaName = document.querySelector('.area2 select').value;
+            console.log(areaName)
+            axios.get('http://localhost:5000/api/crewcategory/count?category='+category+'&areaName='+areaName+'&limit='+pageLimit)  
+            .then(response => {  
+                let count = response.data.count[0].count
+                setTotalRecords(count)
+            })  
+            .catch(e => {  
+                console.error(e);  // 에러표시
+            })  
+        }
 
-    const areaChange = (e) =>{
-        const areaName = e.target.value;
-        const category = props.listdata[0].category
-        const categoryAreaName = category+":"+areaName;
-        axios
-        .get('http://localhost:5000/api/crewcategory/categoryAreaName'+categoryAreaName,null,{
-            params: {
-                categoryAreaName,
-            }
-        })
-        .then(({ data }) => {
-            if(data.crewdata.length === 0 ){
-                setAreadata(false);
-            }else{
-                setAreadata(data.crewdata);
-                console.log(data.crewdata)
-            }
-        })
-        .catch(e => {  // API 호출이 실패한 경우
-        console.error(e);  // 에러표시
-        });
+        const areaChange = (e) =>{
+            const areaName = e.target.value;
+            const category = props.listdata[0].category
+            axios.get('http://localhost:5000/api/crewcategory?category='+category+'&areaname='+areaName+'&limit='+pageLimit)  
+            .then(({ data }) => {
+                if(data.crewdata.length === 0 ){
+                    setAreadata(false);
+                }else{
+                    setAreadata(data.crewdata);
+                    countData()
+                }
+            })
+            .catch(e => {  // API 호출이 실패한 경우
+                console.error(e);  // 에러표시
+            });
         
         }
     return(

@@ -4,7 +4,6 @@ import "./componentCss/crewCardList.css";
 
 const CrewCardList = (props) =>{
 const data = props.listdata;
-console.log(props)
     return(
         <div className={"crewCardList"}>
             <h1 className="category_title">{data[0].category}</h1>
