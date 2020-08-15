@@ -5,7 +5,7 @@ import CrewCardList from "./component/crewCardList";
 import axios from "axios";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Pagination from 'reactjs-hooks-pagination';
-const pageLimit = 1;
+const pageLimit = 6;
 const initialState = {  
   user: {},  
   loading: true,  

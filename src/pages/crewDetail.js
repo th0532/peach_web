@@ -5,12 +5,12 @@ import axios from "axios";
 
 const CrewDetail = (props) => {
     
-    const data = props.listdata[0];
     const [commentValue, setCommentValue] = useState()
     const [category, setcategory] = useState()
     const [num, setNum] = useState()
 // 현재 사용자와 게시글 작성자 비교
     const [userState, setUserState] = useState(false)
+    const [data, setData] = useState(props.listdata[0])
 
     const session_name  = window.sessionStorage.getItem('name');
     const session_id  = window.sessionStorage.getItem('id');
@@ -65,6 +65,7 @@ const CrewDetail = (props) => {
         if(props.listdata[0].id === session_id){
             setUserState(true);
         }
+        setData(props.listdata[0]);
     })
 
     const deletePost = () =>{

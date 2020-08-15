@@ -249,7 +249,6 @@ app.post('/api/insert/signup', (req, res)=> {
 
     crypto.pbkdf2(pass, 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
         if (err) throw err;
-        console.log(derivedKey.toString('hex'));
         const query = "INSERT INTO `login`(`num`, `date`, `name`, `id`, `pass`, `email`,`birthday`) "+
                     "VALUES ('','"+time+"','"+name+"','"+id+"','"+derivedKey.toString('hex')+"','"+email+"','"+birthday+"')";
                     connection.query(query, function(err,rows){
