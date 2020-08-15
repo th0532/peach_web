@@ -5,7 +5,7 @@
     Node.js, Express
 
 ## Youtube 결과물 미리보기
-<https://youtu.be/DJVtVfbXVb4> 
+<https://youtu.be/RhlsQyVYFNQ> 
 
 ## URL 바로가기 (현재 X)
 <https://th0532.github.io/peach_web/>
