@@ -21,14 +21,14 @@ function App() {
       <HashRouter>
         <ScrollToTop>
           <Header></Header>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ exact path="/" component={MainRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/login" component={LoginRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/signin" component={SigninRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/signup" component={SignupRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewcategory" component={CrewCategoryRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewfind" component={CrewFindRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewdetail" component={CrewDetailRoute}/>
-          <Route  /*onUpdate={() => window.scrollTo(0, 0)}*/ path="/crewcreate" component={CrewCreateRoute}/>
+          <Route exact path="/" component={MainRoute}/>
+          <Route path="/login" component={LoginRoute}/>
+          <Route path="/signin" component={SigninRoute}/>
+          <Route path="/signup" component={SignupRoute}/>
+          <Route path="/crewcategory" component={CrewCategoryRoute}/>
+          <Route path="/crewfind" component={CrewFindRoute}/>
+          <Route path="/crewdetail" component={CrewDetailRoute}/>
+          <Route path="/crewcreate" component={CrewCreateRoute}/>
           <Footer></Footer>
         </ScrollToTop>
       </HashRouter>
