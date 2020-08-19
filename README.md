@@ -11,8 +11,7 @@
 Screenshots < Mobile >
 -------------
 <div>
-  <img src="https://user-images.githubusercontent.com/49905817/90625635-dc566080-e254-11ea-90d3-75b5a367c803.png"><br><br><br><br><br><br>
-  <hr></hr>	
+  <img src="https://user-images.githubusercontent.com/49905817/90625635-dc566080-e254-11ea-90d3-75b5a367c803.png"><br><br>
   <img src="https://user-images.githubusercontent.com/49905817/90626292-b5e4f500-e255-11ea-91f2-ac77c0dbab68.png"><br><br>
 </div>
 
