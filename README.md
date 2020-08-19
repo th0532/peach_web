@@ -11,11 +11,9 @@
 Screenshots < Mobile >
 -------------
 <div>
-  <img src="https://user-images.githubusercontent.com/49905817/90516062-75767000-e19e-11ea-99ed-c0ee1c1a1291.png"><br><br>
+  <img src="https://user-images.githubusercontent.com/49905817/90625635-dc566080-e254-11ea-90d3-75b5a367c803.png"><br><br><br><br><br><br>
   <hr></hr>	
-  <img src="https://user-images.githubusercontent.com/49905817/90516064-77d8ca00-e19e-11ea-8864-1192b1559acc.png"><br><br>
-  <hr></hr>
-  <img src="https://user-images.githubusercontent.com/49905817/90516070-78716080-e19e-11ea-91b7-d5bf007dbd59.png">
+  <img src="https://user-images.githubusercontent.com/49905817/90626292-b5e4f500-e255-11ea-91f2-ac77c0dbab68.png"><br><br>
 </div>
 
 Screenshots < Web >
