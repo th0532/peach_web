@@ -1,8 +1,8 @@
 import React,{useState, useEffect} from 'react';
 import { HashRouter, Route} from "react-router-dom";
 import axios from "axios";
-import Header from './pages/component/header';
-import Footer from './pages/component/footer';
+import Header from './pages/header';
+import Footer from './pages/footer';
 import MainRoute from './Route/mainRoute';
 import LoginRoute from './Route/loginRoute';
 import SignupRoute from './Route/SignupRoute';

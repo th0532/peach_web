@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import CrewFind from "../pages/crewFind";
-
+import { useDispatch } from 'react-redux'
+ 
 const CrewRoute = (props) => {
     const [crewData, setCrewData] = useState();
     const [isLoading, setisLoadding] = useState()
@@ -18,8 +19,16 @@ const CrewRoute = (props) => {
         });
 
     }
+
+    const dispatch = useDispatch()
+
     useEffect(()=>{
         getData()
+
+        dispatch({
+            type:'UPDATE_MENU',
+            id:1
+        })
     },[])
 
     return(

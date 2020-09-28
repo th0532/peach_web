@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react";
 import Main from "../pages/main";
 import axios from "axios";
+import { useDispatch } from 'react-redux'
 
 const MainRoute = (props) => {
     const [mapData, setMapData] = useState();
@@ -10,7 +11,7 @@ const MainRoute = (props) => {
     const [isMapLoading, setMapisLoadding] = useState(false)
     const [isNewLoading, setNewisLoadding] = useState()
     const [isHotLoading, setHotisLoadding] = useState()
-
+    
     const getData = async() =>{
         // 맵 데이터
         axios
@@ -41,9 +42,15 @@ const MainRoute = (props) => {
         console.error(e);  // 에러표시
         });
     } 
-    
+    const dispatch = useDispatch(); 
+  
     useEffect(()=>{
         getData();
+
+        dispatch({
+            type:'UPDATE_MENU',
+            id:0
+        })
     },[])
 
     return (

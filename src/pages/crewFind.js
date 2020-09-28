@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./css/crewFind.css";
 import CrewCard from "./component/crewCard";
 
 const CrewFind = (props) => {
-
+     
     return(
         <div className={"crewFind"}>
             <div className={"crew_wrap"}>

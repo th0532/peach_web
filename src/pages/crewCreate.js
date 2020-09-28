@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Range, getTrackBackground } from 'react-range';
+import { useDispatch } from 'react-redux';
 import axios from "axios";
 import "./css/crewCreate.css"
 
 const crewCreate = () => {
+
     return(
             <div className={"crewCreate"}>
                     <Category></Category>

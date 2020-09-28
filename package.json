@@ -19,9 +19,11 @@
     "react-id-swiper": "^4.0.0",
     "react-naver-maps": "^0.0.13",
     "react-range": "^1.6.7",
+    "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactjs-hooks-pagination": "^1.0.17",
+    "redux": "^4.0.5",
     "swiper": "^6.0.2"
   },
   "scripts": {
